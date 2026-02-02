@@ -3,11 +3,9 @@
 
 @push('styles')
 <style>
-    /* Hero Section */
+    /* Hero Section with Slideshow */
     .hero {
         min-height: 100vh;
-        background: linear-gradient(135deg, rgba(26, 86, 50, 0.95) 0%, rgba(15, 61, 34, 0.98) 100%),
-                    url('https://images.unsplash.com/photo-1519817650390-64a93db51149?w=1920') center/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -15,15 +13,58 @@
         overflow: hidden;
     }
 
-    .hero::before {
-        content: '';
+    /* Slideshow Background */
+    .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+
+    .hero-slide.active {
+        opacity: 1;
+    }
+
+    .hero-slide:nth-child(1) {
+        background-image: url('/images/hero/hero-1.jpg');
+    }
+
+    .hero-slide:nth-child(2) {
+        background-image: url('/images/hero/hero-2.jpg');
+    }
+
+    .hero-slide:nth-child(3) {
+        background-image: url('/images/hero/hero-3.jpg');
+    }
+
+    /* Overlay */
+    .hero-overlay {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.06'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        pointer-events: none;
+        background: linear-gradient(
+            180deg,
+            rgba(26, 86, 50, 0.7) 0%,
+            rgba(26, 86, 50, 0.5) 50%,
+            rgba(26, 26, 46, 0.7) 100%
+        );
+        z-index: 1;
     }
 
     /* Decorative Elements */
@@ -70,7 +111,7 @@
         color: var(--secondary);
         padding: 0.5rem 1.5rem;
         border-radius: 50px;
-        font-size: 0.9rem;
+        font-size: 3rem;
         font-weight: 500;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -580,11 +621,21 @@
 @section('content')
 <!-- Hero Section -->
 <section class="hero">
+    <!-- Slideshow Background -->
+    <div class="hero-slideshow">
+        <div class="hero-slide active"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+    
     <div class="hero-decoration hero-decoration-1"></div>
     <div class="hero-decoration hero-decoration-2"></div>
     
     <div class="hero-content" data-aos="fade-up">
-        <span class="hero-subtitle">Bismillahirrahmanirrahim</span>
+        <span class="hero-subtitle">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
         <h1 class="hero-title">
             Muslim Fashion
             <span>Excellence</span>
@@ -888,3 +939,20 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+    // Hero Slideshow
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>
+@endpush
