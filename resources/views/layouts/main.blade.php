@@ -105,12 +105,12 @@
         .logo-icon {
             width: 55px;
             height: 55px;
-            background: var(--gold-gradient);
+            /* background: var(--gold-gradient); */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            /* box-shadow: 0 4px 15px rgba(192, 154, 28, 0.4); */
             transition: transform 0.3s ease;
         }
 
@@ -122,6 +122,13 @@
             color: var(--primary-dark);
             font-weight: 800;
             font-size: 1.3rem;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         .logo-text h1 {
@@ -200,81 +207,6 @@
         .nav-cta::after {
             display: none;
         }
-
-        /* Dropdown Menu */
-.nav-item {
-    position: relative;
-}
-
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.dropdown-arrow {
-    font-size: 0.7rem;
-    transition: transform 0.3s ease;
-}
-
-.nav-item:hover .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background:  white;
-    min-width: 220px;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    padding: 0.75rem 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    list-style: none;
-}
-
-.nav-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-menu::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid white;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.dropdown-menu li a:hover {
-    background: rgba(26, 86, 50, 0.1);
-    color: var(--primary);
-    padding-left: 1.75rem;
-}
-
-.dropdown-divider {
-    height: 1px;
-    background: #eee;
-    margin: 0.5rem 0;
-}
 
         /* Mobile Menu Toggle */
         .menu-toggle {
@@ -591,7 +523,7 @@
         <div class="nav-container">
             <a href="/" class="logo">
                 <div class="logo-icon">
-                    <span>AS</span>
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo">
                 </div>
                 <div class="logo-text">
                     <h1>PT Assabar Sukses Berkah</h1>
@@ -606,27 +538,11 @@
             </div>
 
             <ul class="nav-menu" id="navMenu">
-    <li class="nav-item"><a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
-    <li class="nav-item"><a href="/about" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a></li>
-    
-    <!-- Products Dropdown -->
-    <li class="nav-item dropdown">
-        <a href="/products" class="nav-link dropdown-toggle {{ request()->is('products*') ? 'active' : '' }}">
-            Products
-            <i class="fas fa-chevron-down dropdown-arrow"></i>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="/products?category=kopyah">Kopyah Premium</a></li>
-            <li><a href="/products?category=gamis">Baju Gamis</a></li>
-            <li><a href="/products?category=footwear">Muslim Footwear</a></li>
-            <li><a href="/products?category=accessories">Accessories</a></li>
-            <!-- <li class="dropdown-divider"></li>
-            <li><a href="/products">Semua Produk</a></li> -->
-        </ul>
-    </li>
-    
-    <li class="nav-item"><a href="/contact" class="nav-cta">Contact Us</a></li>
-</ul>
+                <li><a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+                <li><a href="/about" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a></li>
+                <li><a href="/products" class="nav-link {{ request()->is('products') ? 'active' : '' }}">Products</a></li>
+                <li><a href="/contact" class="nav-cta">Contact Us</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -679,9 +595,7 @@
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} <span>PT Assabar Sukses Berkah</span>. All Rights Reserved.</p>
-            </div>
+           
         </div>
     </footer>
 
