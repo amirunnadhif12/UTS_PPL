@@ -5,16 +5,44 @@
 <style>
     /* Page Header */
     .page-header {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        padding: 8rem 0 4rem;
+        min-height: 50vh;
+        background: url('/images/hero/hero-1.jpg') left/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .page-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(26, 86, 50, 0.85) 0%,
+            rgba(26, 86, 50, 0.7) 50%,
+            rgba(26, 26, 46, 0.85) 100%
+        );
+        z-index: 1;
+    }
+
+    .page-header .container {
+        position: relative;
+        z-index: 2;
         text-align: center;
         color: white;
+        padding: 6rem 0 4rem;
     }
 
     .page-header h1 {
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: 1rem;
+        text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
     }
 
     .page-header p {

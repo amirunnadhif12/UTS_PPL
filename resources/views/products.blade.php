@@ -6,13 +6,28 @@
     /* Page Header */
     .page-header {
         min-height: 50vh;
-        background: linear-gradient(135deg, rgba(26, 86, 50, 0.95) 0%, rgba(15, 61, 34, 0.98) 100%),
-                    url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920') center/cover no-repeat;
+        background: url('/images/hero/hero-2.jpg') bottom/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         overflow: hidden;
+    }
+    
+    .page-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(26, 86, 50, 0.85) 0%,
+            rgba(26, 86, 50, 0.7) 50%,
+            rgba(26, 26, 46, 0.85) 100%
+        );
+        z-index: 1;
     }
 
     .page-header::before {
@@ -51,27 +66,6 @@
         margin: 0 auto;
     }
 
-    .breadcrumb {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    .breadcrumb a {
-        color: rgba(255,255,255,0.8);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .breadcrumb a:hover {
-        color: var(--secondary);
-    }
-
-    .breadcrumb span {
-        color: var(--secondary);
-    }
 
     /* Category Filter */
     .category-section {
@@ -325,72 +319,7 @@
         line-height: 1.8;
     }
 
-    /* Featured Banner */
-    .featured-banner {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        padding: 4rem;
-        border-radius: 30px;
-        margin-bottom: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .featured-banner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        pointer-events: none;
-    }
-
-    .featured-content {
-        flex: 1;
-        min-width: 300px;
-        z-index: 2;
-    }
-
-    .featured-content h3 {
-        font-size: 2rem;
-        color: white;
-        margin-bottom: 1rem;
-    }
-
-    .featured-content h3 span {
-        color: var(--secondary);
-    }
-
-    .featured-content p {
-        color: rgba(255,255,255,0.9);
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-    }
-
-    .featured-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        background: var(--secondary);
-        color: var(--dark);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .featured-btn:hover {
-        background: white;
-        transform: translateX(5px);
-    }
-
+  
     /* Responsive */
     @media (max-width: 768px) {
         .page-header h1 {
@@ -438,11 +367,7 @@
     <div class="page-header-content" data-aos="fade-up">
         <h1>Katalog <span>Produk</span></h1>
         <p>Koleksi busana muslim berkualitas tinggi dengan sentuhan elegan dan modern untuk menemani ibadah Anda</p>
-        <div class="breadcrumb">
-            <a href="{{ route('home') }}">Beranda</a>
-            <span>/</span>
-            <span>Produk</span>
-        </div>
+        
     </div>
 </section>
 
@@ -475,17 +400,7 @@
 <!-- Products Section -->
 <section class="products-section">
     <div class="products-container">
-        <!-- Featured Banner -->
-        <div class="featured-banner" data-aos="fade-up">
-            <div class="featured-content">
-                <h3>Koleksi <span>Ramadhan 2026</span></h3>
-                <p>Sambut bulan suci dengan koleksi terbaru busana muslim premium. Dapatkan diskon spesial hingga 30% untuk pembelian pertama.</p>
-                <a href="#" class="featured-btn">
-                    Lihat Koleksi
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+        
 
         <!-- Section Header -->
         <div class="section-header" data-aos="fade-up">
