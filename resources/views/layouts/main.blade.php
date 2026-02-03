@@ -13,6 +13,142 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>PT Assabar Sukses Berkah</h1>
+                    <p>Muslim Fashion Excellence</p>
+                </div>
+            </a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+                <li><a href="/about" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a></li>
+                <li><a href="/products" class="nav-link {{ request()->is('products') ? 'active' : '' }}">Products</a></li>
+                <li><a href="/contact" class="nav-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        @yield('content')
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer islamic-pattern">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>PT Assabar Sukses Berkah</h3>
+                    <p>Produsen terpercaya produk fashion muslim berkualitas tinggi. Kami berkomitmen menghadirkan produk terbaik dengan sentuhan islami yang elegan.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="/contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Muslim Footwear</a></li>
+                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Kopyah Premium</a></li>
+                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Baju Gamis</a></li>
+                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Industri Muslim No. 123, Jakarta, Indonesia</p>
+                    <p><i class="fas fa-phone"></i> +62 21 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@assabar.co.id</p>
+                    <p><i class="fas fa-clock"></i> Mon - Sat: 08:00 - 17:00</p>
+                </div>
+            </div>
+
+           
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Scroll to top
+        const scrollTop = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    @stack('scripts')
+</body>
     
     <style>
         :root {
@@ -516,139 +652,5 @@
         }
     </style>
     @stack('styles')
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">
-                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo">
-                </div>
-                <div class="logo-text">
-                    <h1>PT Assabar Sukses Berkah</h1>
-                    <p>Muslim Fashion Excellence</p>
-                </div>
-            </a>
-            
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
 
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a></li>
-                <li><a href="/about" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a></li>
-                <li><a href="/products" class="nav-link {{ request()->is('products') ? 'active' : '' }}">Products</a></li>
-                <li><a href="/contact" class="nav-cta">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-        @yield('content')
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer islamic-pattern">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>PT Assabar Sukses Berkah</h3>
-                    <p>Produsen terpercaya produk fashion muslim berkualitas tinggi. Kami berkomitmen menghadirkan produk terbaik dengan sentuhan islami yang elegan.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Products</a></li>
-                        <li><a href="/contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Muslim Footwear</a></li>
-                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Kopyah Premium</a></li>
-                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Baju Gamis</a></li>
-                        <li><a href="/products"><i class="fas fa-chevron-right"></i> Accessories</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Industri Muslim No. 123, Jakarta, Indonesia</p>
-                    <p><i class="fas fa-phone"></i> +62 21 1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@assabar.co.id</p>
-                    <p><i class="fas fa-clock"></i> Mon - Sat: 08:00 - 17:00</p>
-                </div>
-            </div>
-
-           
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 50
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Scroll to top
-        const scrollTop = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        scrollTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
-    @stack('scripts')
-</body>
 </html>
