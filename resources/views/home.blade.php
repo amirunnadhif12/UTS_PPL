@@ -219,83 +219,84 @@
     </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="testimonial-section">
-    <div class="testimonial-container">
+<!-- Artikel Section -->
+<section class="artikel-section">
+    <div class="artikel-container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Testimoni</span>
-            <h2>Apa Kata Pelanggan</h2>
+            <span class="subtitle">Artikel Terbaru</span>
+            <h2>Berita & Informasi</h2>
             <div class="divider">
                 <span></span>
-                <i class="fas fa-quote-right"></i>
+                <i class="fas fa-newspaper"></i>
                 <span></span>
             </div>
         </div>
 
-        <div class="testimonial-grid">
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+        <div class="artikel-grid">
+            <!-- Artikel 1 -->
+            <div class="artikel-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="artikel-image">
+                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Artikel 1">
+                    <span class="artikel-category">Tips</span>
                 </div>
-                <p class="testimonial-text">
-                    "Kualitas produk sangat bagus, bahan nyaman dan desainnya elegan. 
-                    Pengiriman juga cepat. Sangat recommended!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AH</div>
-                    <div class="testimonial-info">
-                        <h5>Ahmad Hidayat</h5>
-                        <p>Jakarta</p>
+                <div class="artikel-content">
+                    <div class="artikel-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>1 Februari 2026</span>
                     </div>
+                    <h3>Cara Memilih Kopyah yang Nyaman untuk Sholat</h3>
+                    <p>Panduan lengkap memilih kopyah berkualitas yang nyaman digunakan untuk ibadah sehari-hari dan acara formal.</p>
+                    <a href="#" class="artikel-link">
+                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <!-- Artikel 2 -->
+            <div class="artikel-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="artikel-image">
+                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Artikel 2">
+                    <span class="artikel-category">Fashion</span>
                 </div>
-                <p class="testimonial-text">
-                    "Sudah berlangganan sejak 2 tahun lalu. Kopyah premium mereka 
-                    kualitasnya konsisten dan harga bersaing."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MR</div>
-                    <div class="testimonial-info">
-                        <h5>Muhammad Rizki</h5>
-                        <p>Surabaya</p>
+                <div class="artikel-content">
+                    <div class="artikel-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>28 Januari 2026</span>
                     </div>
+                    <h3>Tren Gamis Modern 2026 yang Tetap Syar'i</h3>
+                    <p>Eksplorasi desain gamis terbaru yang menggabungkan gaya modern dengan tetap menjaga nilai-nilai syar'i.</p>
+                    <a href="#" class="artikel-link">
+                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <!-- Artikel 3 -->
+            <div class="artikel-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="artikel-image">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=250&fit=crop" alt="Artikel 3">
+                    <span class="artikel-category">Perusahaan</span>
                 </div>
-                <p class="testimonial-text">
-                    "Pelayanan sangat ramah dan responsif. Produk gamis untuk 
-                    keluarga kami sangat memuaskan. Terima kasih!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">FA</div>
-                    <div class="testimonial-info">
-                        <h5>Fatimah Azzahra</h5>
-                        <p>Bandung</p>
+                <div class="artikel-content">
+                    <div class="artikel-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>20 Januari 2026</span>
                     </div>
+                    <h3>PT Assabar Sukses Berkah Raih Penghargaan UMKM</h3>
+                    <p>Pencapaian terbaru perusahaan dalam mengembangkan produk fashion muslim berkualitas di Indonesia.</p>
+                    <a href="#" class="artikel-link">
+                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- <div class="artikel-more" data-aos="fade-up">
+            <a href="/artikel" class="btn btn-outline-gold">
+                <i class="fas fa-th-large"></i>
+                Lihat Semua Artikel
+            </a>
+        </div> -->
     </div>
 </section>
 
@@ -850,86 +851,138 @@
         box-shadow: 0 8px 25px rgba(26, 86, 50, 0.4);
     }
 
-    /* Testimonial Section */
-    .testimonial-section {
+       /* Artikel Section */
+    .artikel-section {
         padding: 8rem 0;
         background: var(--cream);
     }
 
-    .testimonial-container {
+    .artikel-container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
     }
 
-    .testimonial-grid {
+    .artikel-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
 
-    .testimonial-card {
+    .artikel-card {
         background: white;
-        padding: 2.5rem;
         border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
     }
 
-    .testimonial-card::before {
-        content: '"';
+    .artikel-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .artikel-image {
+        height: 200px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .artikel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .artikel-card:hover .artikel-image img {
+        transform: scale(1.1);
+    }
+
+    .artikel-category {
         position: absolute;
-        top: 1.5rem;
-        right: 2rem;
-        font-size: 6rem;
-        font-family: 'Amiri', serif;
-        color: rgba(212, 175, 55, 0.2);
-        line-height: 1;
+        top: 1rem;
+        left: 1rem;
+        background: var(--secondary);
+        color: var(--primary-dark);
+        padding: 0.35rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
-    .testimonial-stars {
-        color: var(--secondary);
-        font-size: 1rem;
-        margin-bottom: 1rem;
+    .artikel-content {
+        padding: 1.5rem;
     }
 
-    .testimonial-text {
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    .testimonial-author {
+    .artikel-date {
         display: flex;
         align-items: center;
-        gap: 1rem;
-    }
-
-    .testimonial-avatar {
-        width: 55px;
-        height: 55px;
-        background: var(--gold-gradient);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary-dark);
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
-
-    .testimonial-info h5 {
-        color: var(--primary-dark);
-        font-size: 1.05rem;
-        margin-bottom: 0.25rem;
-    }
-
-    .testimonial-info p {
+        gap: 0.5rem;
         color: #888;
         font-size: 0.85rem;
-        margin: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .artikel-date i {
+        color: var(--secondary);
+    }
+
+    .artikel-content h3 {
+        font-size: 1.25rem;
+        color: var(--primary-dark);
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .artikel-content p {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .artikel-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .artikel-link:hover {
+        color: var(--secondary);
+        gap: 0.75rem;
+    }
+
+    .artikel-more {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .artikel-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .artikel-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Responsive */
@@ -938,7 +991,7 @@
         .about-grid { grid-template-columns: 1fr; gap: 3rem; }
         .products-grid { grid-template-columns: repeat(2, 1fr); }
         .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+
     }
 
     @media (max-width: 768px) {
@@ -952,7 +1005,6 @@
         .about-content h2 { font-size: 2rem; }
         .stats-grid { grid-template-columns: repeat(2, 1fr); }
         .stat-number { font-size: 2.5rem; }
-        .testimonial-grid { grid-template-columns: 1fr; }
         .cta-content h2 { font-size: 2rem; }
     }
 </style>
