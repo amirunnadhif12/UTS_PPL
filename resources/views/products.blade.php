@@ -448,23 +448,45 @@
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
 
+    // Function to apply filter
+    function applyFilter(filter) {
+        filterBtns.forEach(b => {
+            if (b.dataset.filter === filter) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
+            }
+        });
+
+        productCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.5s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Check URL parameter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+        applyFilter(categoryParam);
+    }
+
+    // Click event for filter buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-
             const filter = btn.dataset.filter;
-
-            productCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            applyFilter(filter);
+            
+            // Update URL without reload
+            if (filter === 'all') {
+                history.pushState({}, '', '/products');
+            } else {
+                history.pushState({}, '', '/products?category=' + filter);
+            }
         });
     });
 
