@@ -129,53 +129,40 @@
         </div>
 
         <div class="products-grid">
-            <!-- Product 1 -->
+            <!-- Product 1 - Jubah -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="product-image">
-                    <span class="product-badge">Best Seller</span>
-                    <div class="product-icon">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
+                    <img src="/images/produkunggulan/juba-1.png" alt="Jubah">
                 </div>
                 <div class="product-content">
-                    <h3>Muslim Footwear</h3>
-                    <p>Sandal dan sepatu muslim dengan desain modern dan nyaman untuk beribadah serta aktivitas sehari-hari.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    <h3>Jubah</h3>
+                    <a href="/products?category=jubah" class="product-link">
+                        Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product 2 - Baju Koko -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-image">
-                    <span class="product-badge">Premium</span>
-                    <div class="product-icon">
-                        <i class="fas fa-hat-wizard"></i>
-                    </div>
+                    <img src="/images/produkunggulan/bajukoko.png" alt="Baju Koko">
                 </div>
                 <div class="product-content">
-                    <h3>Kopyah Premium</h3>
-                    <p>Koleksi kopyah berkualitas tinggi dengan berbagai model dari tradisional hingga kontemporer.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    <h3>Baju Koko</h3>
+                    <a href="/products?category=koko" class="product-link">
+                        Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
-
-            <!-- Product 3 -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+             <!-- Product 3 -   Jubah -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-image">
-                    <span class="product-badge">New</span>
-                    <div class="product-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
+                    <img src="/images/produkunggulan/juba-2.jpeg" alt="Jubah">
                 </div>
                 <div class="product-content">
-                    <h3>Baju Gamis</h3>
-                    <p>Gamis elegan dengan bahan premium dan desain yang syar'i untuk pria dan wanita muslim.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    <h3>Jubah</h3>
+                    <a href="/products?category=jubah" class="product-link">
+                        Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -668,13 +655,24 @@
     }
 
     .product-image {
-        height: 280px;
+        height: 400px;
         background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         overflow: hidden;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.1);
     }
 
     .product-image::before {
@@ -685,6 +683,8 @@
         right: 0;
         bottom: 0;
         background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 1;
     }
 
     .product-icon {
