@@ -45,10 +45,10 @@
             <i class="fas fa-chevron-down dropdown-arrow"></i>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="/products?category=kopyah">Jubah</a></li>
-            <li><a href="/products?category=gamis">Baju Koko</a></li>
-            <li><a href="/products?category=footwear">Songkok</a></li>
-            <li><a href="/products?category=accessories">Peci</a></li>
+            <li><a href="/products?category=jubah">Jubah</a></li>
+            <li><a href="/products?category=koko">Baju Koko</a></li>
+            <li><a href="/products?category=songkok">Songkok</a></li>
+            <li><a href="/products?category=peci">Peci</a></li>
         </ul>
     </li>
                 <li><a href="/contact" class="nav-cta">Contact Us</a></li>
