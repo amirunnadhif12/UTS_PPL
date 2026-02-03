@@ -1,6 +1,345 @@
 @extends('layouts.main')
 @section('title', 'Home - PT Assabar Sukses Berkah | Muslim Fashion Excellence')
 
+@section('content')
+<!-- Hero Section -->
+<section class="hero">
+    <!-- Slideshow Background -->
+    <div class="hero-slideshow">
+        <div class="hero-slide active"></div>
+        <div class="hero-slide"></div>
+        <div class="hero-slide"></div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-decoration hero-decoration-1"></div>
+    <div class="hero-decoration hero-decoration-2"></div>
+    
+    <div class="hero-content" data-aos="fade-up">
+        <span class="hero-subtitle">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+        <h1 class="hero-title">
+            Muslim Fashion
+            <span>Excellence</span>
+        </h1>
+        <p class="hero-description">
+            Produsen terpercaya footwear muslim, kopyah premium, dan baju gamis berkualitas tinggi. 
+            Menghadirkan produk dengan sentuhan islami yang elegan untuk keluarga muslim Indonesia.
+        </p>
+        <div class="hero-buttons">
+            <a href="/products" class="btn btn-primary">
+                <i class="fas fa-shopping-bag"></i>
+                Lihat Produk
+            </a>
+            <a href="/about" class="btn btn-secondary">
+                <i class="fas fa-info-circle"></i>
+                Tentang Kami
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-scroll">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="About Us">
+                <div class="about-image-decoration"></div>
+                <div class="about-experience">
+                    <h3>10+</h3>
+                    <p>Tahun Pengalaman</p>
+                </div>
+            </div>
+
+            <div class="about-content" data-aos="fade-left">
+                <h4>Tentang Kami</h4>
+                <h2>Menyediakan Produk Fashion Muslim Berkualitas</h2>
+                <p>
+                    PT Assabar Sukses Berkah adalah perusahaan yang bergerak di bidang produksi 
+                    fashion muslim dengan fokus pada kualitas dan nilai-nilai islami. Kami berkomitmen 
+                    untuk menghadirkan produk terbaik yang memenuhi kebutuhan umat muslim Indonesia.
+                </p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h5>Kualitas Premium</h5>
+                            <p>Bahan berkualitas tinggi</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div>
+                            <h5>Nilai Islami</h5>
+                            <p>Sesuai syariat Islam</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div>
+                            <h5>Pengiriman Cepat</h5>
+                            <p>Seluruh Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h5>Support 24/7</h5>
+                            <p>Layanan pelanggan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/about" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    Selengkapnya
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <div class="products-container">
+        <div class="section-title" data-aos="fade-up">
+            <span class="subtitle">Produk Kami</span>
+            <h2>Produk Unggulan</h2>
+            <div class="divider">
+                <span></span>
+                <i class="fas fa-star"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-image">
+                    <span class="product-badge">Best Seller</span>
+                    <div class="product-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Muslim Footwear</h3>
+                    <p>Sandal dan sepatu muslim dengan desain modern dan nyaman untuk beribadah serta aktivitas sehari-hari.</p>
+                    <a href="/products" class="product-link">
+                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-image">
+                    <span class="product-badge">Premium</span>
+                    <div class="product-icon">
+                        <i class="fas fa-hat-wizard"></i>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Kopyah Premium</h3>
+                    <p>Koleksi kopyah berkualitas tinggi dengan berbagai model dari tradisional hingga kontemporer.</p>
+                    <a href="/products" class="product-link">
+                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <div class="product-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3>Baju Gamis</h3>
+                    <p>Gamis elegan dengan bahan premium dan desain yang syar'i untuk pria dan wanita muslim.</p>
+                    <a href="/products" class="product-link">
+                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Pelanggan Puas</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Jenis Produk</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="stat-number">34</div>
+                <div class="stat-label">Provinsi Terjangkau</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Rating Pelanggan</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+    <div class="testimonial-container">
+        <div class="section-title" data-aos="fade-up">
+            <span class="subtitle">Testimoni</span>
+            <h2>Apa Kata Pelanggan</h2>
+            <div class="divider">
+                <span></span>
+                <i class="fas fa-quote-right"></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Kualitas produk sangat bagus, bahan nyaman dan desainnya elegan. 
+                    Pengiriman juga cepat. Sangat recommended!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AH</div>
+                    <div class="testimonial-info">
+                        <h5>Ahmad Hidayat</h5>
+                        <p>Jakarta</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Sudah berlangganan sejak 2 tahun lalu. Kopyah premium mereka 
+                    kualitasnya konsisten dan harga bersaing."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MR</div>
+                    <div class="testimonial-info">
+                        <h5>Muhammad Rizki</h5>
+                        <p>Surabaya</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Pelayanan sangat ramah dan responsif. Produk gamis untuk 
+                    keluarga kami sangat memuaskan. Terima kasih!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">FA</div>
+                    <div class="testimonial-info">
+                        <h5>Fatimah Azzahra</h5>
+                        <p>Bandung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-container" data-aos="fade-up">
+        <div class="cta-content">
+            <h2>Siap Berbelanja?</h2>
+            <p>
+                Temukan koleksi lengkap fashion muslim berkualitas kami. 
+                Hubungi kami sekarang untuk pemesanan atau informasi lebih lanjut.
+            </p>
+            <div class="cta-buttons">
+                <a href="/products" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i>
+                    Lihat Katalog
+                </a>
+                <a href="/contact" class="btn btn-green">
+                    <i class="fab fa-whatsapp"></i>
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
+
+@push('scripts')
+<script>
+    // Hero Slideshow
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>
+@endpush
+
 @push('styles')
 <style>
     /* Hero Section with Slideshow */
@@ -172,7 +511,8 @@
     /* About Section */
     .about-section {
         padding: 8rem 0;
-        background: white;
+        background: white
+        ;
     }
 
     .about-container {
@@ -618,341 +958,4 @@
 </style>
 @endpush
 
-@section('content')
-<!-- Hero Section -->
-<section class="hero">
-    <!-- Slideshow Background -->
-    <div class="hero-slideshow">
-        <div class="hero-slide active"></div>
-        <div class="hero-slide"></div>
-        <div class="hero-slide"></div>
-    </div>
-    
-    <!-- Overlay -->
-    <div class="hero-overlay"></div>
-    
-    <div class="hero-decoration hero-decoration-1"></div>
-    <div class="hero-decoration hero-decoration-2"></div>
-    
-    <div class="hero-content" data-aos="fade-up">
-        <span class="hero-subtitle">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-        <h1 class="hero-title">
-            Muslim Fashion
-            <span>Excellence</span>
-        </h1>
-        <p class="hero-description">
-            Produsen terpercaya footwear muslim, kopyah premium, dan baju gamis berkualitas tinggi. 
-            Menghadirkan produk dengan sentuhan islami yang elegan untuk keluarga muslim Indonesia.
-        </p>
-        <div class="hero-buttons">
-            <a href="/products" class="btn btn-primary">
-                <i class="fas fa-shopping-bag"></i>
-                Lihat Produk
-            </a>
-            <a href="/about" class="btn btn-secondary">
-                <i class="fas fa-info-circle"></i>
-                Tentang Kami
-            </a>
-        </div>
-    </div>
 
-    <div class="hero-scroll">
-        <span>Scroll Down</span>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="about-section">
-    <div class="about-container">
-        <div class="about-grid">
-            <div class="about-image" data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&h=700&fit=crop" alt="About Us">
-                <div class="about-image-decoration"></div>
-                <div class="about-experience">
-                    <h3>10+</h3>
-                    <p>Tahun Pengalaman</p>
-                </div>
-            </div>
-
-            <div class="about-content" data-aos="fade-left">
-                <h4>Tentang Kami</h4>
-                <h2>Menyediakan Produk Fashion Muslim Berkualitas</h2>
-                <p>
-                    PT Assabar Sukses Berkah adalah perusahaan yang bergerak di bidang produksi 
-                    fashion muslim dengan fokus pada kualitas dan nilai-nilai islami. Kami berkomitmen 
-                    untuk menghadirkan produk terbaik yang memenuhi kebutuhan umat muslim Indonesia.
-                </p>
-
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div>
-                            <h5>Kualitas Premium</h5>
-                            <p>Bahan berkualitas tinggi</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <div>
-                            <h5>Nilai Islami</h5>
-                            <p>Sesuai syariat Islam</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div>
-                            <h5>Pengiriman Cepat</h5>
-                            <p>Seluruh Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <div>
-                            <h5>Support 24/7</h5>
-                            <p>Layanan pelanggan</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="/about" class="btn btn-primary">
-                    <i class="fas fa-arrow-right"></i>
-                    Selengkapnya
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Products Section -->
-<section class="products-section">
-    <div class="products-container">
-        <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Produk Kami</span>
-            <h2>Produk Unggulan</h2>
-            <div class="divider">
-                <span></span>
-                <i class="fas fa-star"></i>
-                <span></span>
-            </div>
-        </div>
-
-        <div class="products-grid">
-            <!-- Product 1 -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="product-image">
-                    <span class="product-badge">Best Seller</span>
-                    <div class="product-icon">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3>Muslim Footwear</h3>
-                    <p>Sandal dan sepatu muslim dengan desain modern dan nyaman untuk beribadah serta aktivitas sehari-hari.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <span class="product-badge">Premium</span>
-                    <div class="product-icon">
-                        <i class="fas fa-hat-wizard"></i>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3>Kopyah Premium</h3>
-                    <p>Koleksi kopyah berkualitas tinggi dengan berbagai model dari tradisional hingga kontemporer.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="product-image">
-                    <span class="product-badge">New</span>
-                    <div class="product-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <h3>Baju Gamis</h3>
-                    <p>Gamis elegan dengan bahan premium dan desain yang syar'i untuk pria dan wanita muslim.</p>
-                    <a href="/products" class="product-link">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="stats-container">
-        <div class="stats-grid">
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="stat-number">5000+</div>
-                <div class="stat-label">Pelanggan Puas</div>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-icon">
-                    <i class="fas fa-box"></i>
-                </div>
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Jenis Produk</div>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="stat-number">34</div>
-                <div class="stat-label">Provinsi Terjangkau</div>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-icon">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="stat-number">4.9</div>
-                <div class="stat-label">Rating Pelanggan</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonial Section -->
-<section class="testimonial-section">
-    <div class="testimonial-container">
-        <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Testimoni</span>
-            <h2>Apa Kata Pelanggan</h2>
-            <div class="divider">
-                <span></span>
-                <i class="fas fa-quote-right"></i>
-                <span></span>
-            </div>
-        </div>
-
-        <div class="testimonial-grid">
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Kualitas produk sangat bagus, bahan nyaman dan desainnya elegan. 
-                    Pengiriman juga cepat. Sangat recommended!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AH</div>
-                    <div class="testimonial-info">
-                        <h5>Ahmad Hidayat</h5>
-                        <p>Jakarta</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Sudah berlangganan sejak 2 tahun lalu. Kopyah premium mereka 
-                    kualitasnya konsisten dan harga bersaing."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MR</div>
-                    <div class="testimonial-info">
-                        <h5>Muhammad Rizki</h5>
-                        <p>Surabaya</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    "Pelayanan sangat ramah dan responsif. Produk gamis untuk 
-                    keluarga kami sangat memuaskan. Terima kasih!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">FA</div>
-                    <div class="testimonial-info">
-                        <h5>Fatimah Azzahra</h5>
-                        <p>Bandung</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="cta-container" data-aos="fade-up">
-        <div class="cta-content">
-            <h2>Siap Berbelanja?</h2>
-            <p>
-                Temukan koleksi lengkap fashion muslim berkualitas kami. 
-                Hubungi kami sekarang untuk pemesanan atau informasi lebih lanjut.
-            </p>
-            <div class="cta-buttons">
-                <a href="/products" class="btn btn-primary">
-                    <i class="fas fa-shopping-bag"></i>
-                    Lihat Katalog
-                </a>
-                <a href="/contact" class="btn btn-green">
-                    <i class="fab fa-whatsapp"></i>
-                    Hubungi Kami
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-@endsection
-
-@push('scripts')
-<script>
-    // Hero Slideshow
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Change slide every 5 seconds
-    setInterval(nextSlide, 5000);
-</script>
-@endpush
