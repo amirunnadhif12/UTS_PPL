@@ -410,306 +410,33 @@
 
         <!-- Products Grid -->
         <div class="products-grid">
-            <!-- Jubah Products -->
-            <div class="product-card" data-category="jubah" data-aos="fade-up" data-aos-delay="100">
-                <span class="product-badge new">Baru</span>
+            @forelse($products as $index => $product)
+            <div class="product-card" data-category="{{ strtolower(str_replace(' ', '', $product->kategori)) }}" data-aos="fade-up" data-aos-delay="{{ ($index % 6 + 1) * 50 }}">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500" alt="Jubah Premium Al-Haramain">
+                    @if($product->gambar1)
+                        <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}">
+                    @else
+                        <img src="https://via.placeholder.com/500x400?text=No+Image" alt="{{ $product->nama_produk }}">
+                    @endif
                     <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
+                        <a href="{{ route('products.show', $product->id) }}" class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></a>
                         <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
+                        <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}" target="_blank" class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Jubah</span>
-                    <h3 class="product-name">Jubah Premium Al-Haramain</h3>
-                    <p class="product-description">Jubah pria berbahan katun premium dengan bordiran eksklusif, nyaman untuk ibadah dan acara formal.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 450.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                            <span class="color-dot" style="background: #f5f5dc;"></span>
-                            <span class="color-dot" style="background: #1a5632;"></span>
-                        </div>
-                    </div>
+                    <span class="product-category">{{ $product->kategori }}</span>
+                    <h3 class="product-name">{{ $product->nama_produk }}</h3>
+                    <p class="product-description">{{ Str::limit($product->deskripsi, 100) }}</p>
                 </div>
             </div>
-
-            <div class="product-card" data-category="jubah" data-aos="fade-up" data-aos-delay="150">
-                <span class="product-badge">Best Seller</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?w=500" alt="Jubah Saudi Classic">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Jubah</span>
-                    <h3 class="product-name">Jubah Saudi Classic</h3>
-                    <p class="product-description">Jubah model Saudi Arabia dengan bahan premium yang adem dan tidak mudah kusut.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 385.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #fff;"></span>
-                            <span class="color-dot" style="background: #d4af37;"></span>
-                            <span class="color-dot" style="background: #4a4a4a;"></span>
-                        </div>
-                    </div>
-                </div>
+            @empty
+            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                <i class="fas fa-box-open" style="font-size: 4rem; color: #ddd; margin-bottom: 1rem; display: block;"></i>
+                <h3 style="color: #666; margin-bottom: 0.5rem;">Belum Ada Produk</h3>
+                <p style="color: #999;">Produk akan segera tersedia. Silakan kunjungi kembali nanti.</p>
             </div>
-
-            <div class="product-card" data-category="jubah" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500" alt="Jubah Madinah Elegant">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Jubah</span>
-                    <h3 class="product-name">Jubah Madinah Elegant</h3>
-                    <p class="product-description">Jubah elegan dengan detail bordiran khas Madinah, cocok untuk acara spesial.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 520.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #2c3e50;"></span>
-                            <span class="color-dot" style="background: #8b4513;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Baju Koko Products -->
-            <div class="product-card" data-category="koko" data-aos="fade-up" data-aos-delay="100">
-                <span class="product-badge new">Baru</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500" alt="Koko Premium Bordir">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Baju Koko</span>
-                    <h3 class="product-name">Koko Premium Bordir Emas</h3>
-                    <p class="product-description">Baju koko lengan panjang dengan bordir emas yang elegan, bahan katun toyobo premium.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 275.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #fff;"></span>
-                            <span class="color-dot" style="background: #1a5632;"></span>
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="koko" data-aos="fade-up" data-aos-delay="150">
-                <span class="product-badge sale">Diskon 20%</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Koko Modern Slim Fit">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Baju Koko</span>
-                    <h3 class="product-name">Koko Modern Slim Fit</h3>
-                    <p class="product-description">Baju koko dengan potongan modern slim fit, cocok untuk anak muda yang aktif.</p>
-                    <div class="product-footer">
-                        <div class="product-price">
-                            <span class="old-price">Rp 250.000</span>
-                            Rp 200.000
-                        </div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #3498db;"></span>
-                            <span class="color-dot" style="background: #2ecc71;"></span>
-                            <span class="color-dot" style="background: #9b59b6;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="koko" data-aos="fade-up" data-aos-delay="200">
-                <span class="product-badge">Best Seller</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Koko Casual Daily">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Baju Koko</span>
-                    <h3 class="product-name">Koko Casual Daily</h3>
-                    <p class="product-description">Baju koko kasual untuk sehari-hari, nyaman dan tetap stylish untuk aktivitas apapun.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 185.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #ecf0f1;"></span>
-                            <span class="color-dot" style="background: #bdc3c7;"></span>
-                            <span class="color-dot" style="background: #34495e;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Songkok Products -->
-            <div class="product-card" data-category="songkok" data-aos="fade-up" data-aos-delay="100">
-                <span class="product-badge new">Baru</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1582791694770-cbdc9dda338f?w=500" alt="Songkok Nasional Premium">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Songkok</span>
-                    <h3 class="product-name">Songkok Nasional Premium</h3>
-                    <p class="product-description">Songkok hitam premium kualitas terbaik, cocok untuk acara formal dan resmi.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 125.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="songkok" data-aos="fade-up" data-aos-delay="150">
-                <span class="product-badge">Best Seller</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500" alt="Songkok Beludru Exclusive">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Songkok</span>
-                    <h3 class="product-name">Songkok Beludru Exclusive</h3>
-                    <p class="product-description">Songkok berbahan beludru halus dengan jahitan rapi, tampil elegan dalam setiap kesempatan.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 95.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                            <span class="color-dot" style="background: #2c3e50;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="songkok" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500" alt="Songkok AC Bordir">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Songkok</span>
-                    <h3 class="product-name">Songkok AC Bordir Emas</h3>
-                    <p class="product-description">Songkok dengan lubang ventilasi AC dan bordiran emas, adem dan mewah.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 150.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                            <span class="color-dot" style="background: #8b4513;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Peci Products -->
-            <div class="product-card" data-category="peci" data-aos="fade-up" data-aos-delay="100">
-                <span class="product-badge new">Baru</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=500" alt="Peci Rajut Premium">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Peci</span>
-                    <h3 class="product-name">Peci Rajut Premium</h3>
-                    <p class="product-description">Peci rajut tangan dengan motif tradisional, nyaman dan tidak panas di kepala.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 75.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #fff;"></span>
-                            <span class="color-dot" style="background: #1a1a1a;"></span>
-                            <span class="color-dot" style="background: #8b4513;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="peci" data-aos="fade-up" data-aos-delay="150">
-                <span class="product-badge">Best Seller</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500" alt="Peci Putih Haji">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Peci</span>
-                    <h3 class="product-name">Peci Putih Haji Premium</h3>
-                    <p class="product-description">Peci putih berkualitas tinggi, ideal untuk ibadah haji dan umrah.</p>
-                    <div class="product-footer">
-                        <div class="product-price">Rp 85.000</div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #fff; border-color: #ccc;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="peci" data-aos="fade-up" data-aos-delay="200">
-                <span class="product-badge sale">Diskon 15%</span>
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500" alt="Peci Motif Ethnic">
-                    <div class="product-overlay">
-                        <button class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></button>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <button class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Peci</span>
-                    <h3 class="product-name">Peci Motif Ethnic Nusantara</h3>
-                    <p class="product-description">Peci dengan motif batik dan tenun khas nusantara, perpaduan tradisi dan modernitas.</p>
-                    <div class="product-footer">
-                        <div class="product-price">
-                            <span class="old-price">Rp 100.000</span>
-                            Rp 85.000
-                        </div>
-                        <div class="product-colors">
-                            <span class="color-dot" style="background: #8b4513;"></span>
-                            <span class="color-dot" style="background: #2c3e50;"></span>
-                            <span class="color-dot" style="background: #1a5632;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforelse
         </div>
     </div>
 </section>

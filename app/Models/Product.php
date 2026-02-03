@@ -17,6 +17,9 @@ class Product extends Model
         'gambar3',
         'gambar4',
         'gambar5',
+        'link_shopee',
+        'link_tokopedia',
+        'link_lazada',
     ];
 
     protected $casts = [
