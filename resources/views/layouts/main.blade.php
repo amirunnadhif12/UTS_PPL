@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'PT Assabar Sukses Berkah')</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo.png') }}">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     
