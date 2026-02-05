@@ -56,12 +56,9 @@ class ProductController extends Controller
             'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'link_shopee' => 'nullable|url|max:500',
-            'link_tokopedia' => 'nullable|url|max:500',
-            'link_lazada' => 'nullable|url|max:500',
         ]);
 
-        $data = $request->only(['nama_produk', 'kategori', 'deskripsi', 'link_shopee', 'link_tokopedia', 'link_lazada']);
+        $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
 
         // Handle image uploads
         for ($i = 1; $i <= 5; $i++) {
@@ -111,12 +108,9 @@ class ProductController extends Controller
             'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'link_shopee' => 'nullable|url|max:500',
-            'link_tokopedia' => 'nullable|url|max:500',
-            'link_lazada' => 'nullable|url|max:500',
         ]);
 
-        $data = $request->only(['nama_produk', 'kategori', 'deskripsi', 'link_shopee', 'link_tokopedia', 'link_lazada']);
+        $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
 
         // Handle image uploads
         for ($i = 1; $i <= 5; $i++) {

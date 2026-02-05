@@ -22,14 +22,6 @@
         color: #dc3545;
         margin-left: 2px;
     }
-    .marketplace-label {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .marketplace-label .shopee { color: #EE4D2D; }
-    .marketplace-label .tokopedia { color: #42B549; }
-    .marketplace-label .lazada { color: #0F146D; }
     .form-actions {
         margin-top: 2.5rem;
         padding-top: 1.5rem;
@@ -50,16 +42,6 @@
     @media (max-width: 576px) {
         .image-upload-grid {
             grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    .marketplace-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-    @media (max-width: 768px) {
-        .marketplace-grid {
-            grid-template-columns: 1fr;
         }
     }
 </style>
@@ -137,44 +119,6 @@
                     </div>
                 </div>
                 @endfor
-            </div>
-
-            <h4 class="section-title">
-                <i class="fas fa-shopping-bag"></i> Link Marketplace
-            </h4>
-            <p class="form-text" style="margin-bottom: 1.5rem;">Masukkan link produk di marketplace (opsional)</p>
-
-            <div class="marketplace-grid">
-                <div class="form-group">
-                    <label class="form-label marketplace-label" for="link_shopee">
-                        <i class="fas fa-shopping-cart shopee"></i> Link Shopee
-                    </label>
-                    <input type="url" name="link_shopee" id="link_shopee" class="form-control" 
-                           value="{{ old('link_shopee') }}" placeholder="https://shopee.co.id/...">
-                    @error('link_shopee')
-                        <span class="form-text" style="color: red;">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label class="form-label marketplace-label" for="link_tokopedia">
-                        <i class="fas fa-store tokopedia"></i> Link Tokopedia
-                    </label>
-                    <input type="url" name="link_tokopedia" id="link_tokopedia" class="form-control" 
-                           value="{{ old('link_tokopedia') }}" placeholder="https://tokopedia.com/...">
-                    @error('link_tokopedia')
-                        <span class="form-text" style="color: red;">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label class="form-label marketplace-label" for="link_lazada">
-                        <i class="fas fa-shopping-basket lazada"></i> Link Lazada
-                    </label>
-                    <input type="url" name="link_lazada" id="link_lazada" class="form-control" 
-                           value="{{ old('link_lazada') }}" placeholder="https://lazada.co.id/...">
-                    @error('link_lazada')
-                        <span class="form-text" style="color: red;">{{ $message }}</span>
-                    @enderror
-                </div>
             </div>
 
             <div class="form-actions">

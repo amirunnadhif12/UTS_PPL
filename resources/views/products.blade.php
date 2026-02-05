@@ -1,6 +1,155 @@
 @extends('layouts.main')
 @section('title', 'Produk - PT Assabar Sukses Berkah | Katalog Busana Muslim')
 
+
+
+@section('content')
+<!-- Page Header -->
+<section class="page-header">
+    <div class="page-header-content" data-aos="fade-up">
+        <h1>Katalog <span>Produk</span></h1>
+        <p>Koleksi busana muslim berkualitas tinggi dengan sentuhan elegan dan modern untuk menemani ibadah Anda</p>
+        
+    </div>
+</section>
+
+<!-- Category Filter -->
+<section class="category-section">
+    <div class="category-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th-large"></i>
+            Semua Produk
+        </button>
+        <button class="filter-btn" data-filter="jubah">
+            <i class="fas fa-vest"></i>
+            Jubah
+        </button>
+        <button class="filter-btn" data-filter="koko">
+            <i class="fas fa-tshirt"></i>
+            Baju Koko
+        </button>
+        <button class="filter-btn" data-filter="songkok">
+            <i class="fas fa-hat-wizard"></i>
+            Songkok
+        </button>
+        <button class="filter-btn" data-filter="peci">
+            <i class="fas fa-hat-cowboy"></i>
+            Peci
+        </button>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <div class="products-container">
+        
+
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <h2>Koleksi <span>Busana Muslim</span></h2>
+            <p>Temukan berbagai pilihan jubah, baju koko, songkok, dan peci berkualitas tinggi dengan desain modern dan nyaman dipakai</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            @forelse($products as $index => $product)
+            <div class="product-card" data-category="{{ strtolower(str_replace(' ', '', $product->kategori)) }}" data-aos="fade-up" data-aos-delay="{{ ($index % 6 + 1) * 50 }}">
+                <div class="product-image">
+                    @if($product->gambar1)
+                        <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}">
+                    @else
+                        <img src="https://via.placeholder.com/500x400?text=No+Image" alt="{{ $product->nama_produk }}">
+                    @endif
+                    <div class="product-overlay">
+                        <a href="{{ route('products.show', $product->id) }}" class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
+                        <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}" target="_blank" class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">{{ $product->kategori }}</span>
+                    <h3 class="product-name">{{ $product->nama_produk }}</h3>
+                    <p class="product-description">{{ Str::limit($product->deskripsi, 100) }}</p>
+                </div>
+            </div>
+            @empty
+            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
+                <i class="fas fa-box-open" style="font-size: 4rem; color: #ddd; margin-bottom: 1rem; display: block;"></i>
+                <h3 style="color: #666; margin-bottom: 0.5rem;">Belum Ada Produk</h3>
+                <p style="color: #999;">Produk akan segera tersedia. Silakan kunjungi kembali nanti.</p>
+            </div>
+            @endforelse
+        </div>
+    </div>
+</section>
+@endsection
+
+@push('scripts')
+<script>
+    // Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    // Function to apply filter
+    function applyFilter(filter) {
+        filterBtns.forEach(b => {
+            if (b.dataset.filter === filter) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
+            }
+        });
+
+        productCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.5s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Check URL parameter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+        applyFilter(categoryParam);
+    }
+
+    // Click event for filter buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            applyFilter(filter);
+            
+            // Update URL without reload
+            if (filter === 'all') {
+                history.pushState({}, '', '/products');
+            } else {
+                history.pushState({}, '', '/products?category=' + filter);
+            }
+        });
+    });
+
+    // Add fadeInUp animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+@endpush
+
 @push('styles')
 <style>
     /* Page Header */
@@ -359,151 +508,4 @@
         }
     }
 </style>
-@endpush
-
-@section('content')
-<!-- Page Header -->
-<section class="page-header">
-    <div class="page-header-content" data-aos="fade-up">
-        <h1>Katalog <span>Produk</span></h1>
-        <p>Koleksi busana muslim berkualitas tinggi dengan sentuhan elegan dan modern untuk menemani ibadah Anda</p>
-        
-    </div>
-</section>
-
-<!-- Category Filter -->
-<section class="category-section">
-    <div class="category-filter" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">
-            <i class="fas fa-th-large"></i>
-            Semua Produk
-        </button>
-        <button class="filter-btn" data-filter="jubah">
-            <i class="fas fa-vest"></i>
-            Jubah
-        </button>
-        <button class="filter-btn" data-filter="koko">
-            <i class="fas fa-tshirt"></i>
-            Baju Koko
-        </button>
-        <button class="filter-btn" data-filter="songkok">
-            <i class="fas fa-hat-wizard"></i>
-            Songkok
-        </button>
-        <button class="filter-btn" data-filter="peci">
-            <i class="fas fa-hat-cowboy"></i>
-            Peci
-        </button>
-    </div>
-</section>
-
-<!-- Products Section -->
-<section class="products-section">
-    <div class="products-container">
-        
-
-        <!-- Section Header -->
-        <div class="section-header" data-aos="fade-up">
-            <h2>Koleksi <span>Busana Muslim</span></h2>
-            <p>Temukan berbagai pilihan jubah, baju koko, songkok, dan peci berkualitas tinggi dengan desain modern dan nyaman dipakai</p>
-        </div>
-
-        <!-- Products Grid -->
-        <div class="products-grid">
-            @forelse($products as $index => $product)
-            <div class="product-card" data-category="{{ strtolower(str_replace(' ', '', $product->kategori)) }}" data-aos="fade-up" data-aos-delay="{{ ($index % 6 + 1) * 50 }}">
-                <div class="product-image">
-                    @if($product->gambar1)
-                        <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}">
-                    @else
-                        <img src="https://via.placeholder.com/500x400?text=No+Image" alt="{{ $product->nama_produk }}">
-                    @endif
-                    <div class="product-overlay">
-                        <a href="{{ route('products.show', $product->id) }}" class="overlay-btn" title="Lihat Detail"><i class="fas fa-eye"></i></a>
-                        <button class="overlay-btn" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}" target="_blank" class="overlay-btn" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">{{ $product->kategori }}</span>
-                    <h3 class="product-name">{{ $product->nama_produk }}</h3>
-                    <p class="product-description">{{ Str::limit($product->deskripsi, 100) }}</p>
-                </div>
-            </div>
-            @empty
-            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;">
-                <i class="fas fa-box-open" style="font-size: 4rem; color: #ddd; margin-bottom: 1rem; display: block;"></i>
-                <h3 style="color: #666; margin-bottom: 0.5rem;">Belum Ada Produk</h3>
-                <p style="color: #999;">Produk akan segera tersedia. Silakan kunjungi kembali nanti.</p>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
-@endsection
-
-@push('scripts')
-<script>
-    // Category Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    // Function to apply filter
-    function applyFilter(filter) {
-        filterBtns.forEach(b => {
-            if (b.dataset.filter === filter) {
-                b.classList.add('active');
-            } else {
-                b.classList.remove('active');
-            }
-        });
-
-        productCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeInUp 0.5s ease forwards';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    // Check URL parameter on page load
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryParam = urlParams.get('category');
-    if (categoryParam) {
-        applyFilter(categoryParam);
-    }
-
-    // Click event for filter buttons
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            applyFilter(filter);
-            
-            // Update URL without reload
-            if (filter === 'all') {
-                history.pushState({}, '', '/products');
-            } else {
-                history.pushState({}, '', '/products?category=' + filter);
-            }
-        });
-    });
-
-    // Add fadeInUp animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-</script>
 @endpush

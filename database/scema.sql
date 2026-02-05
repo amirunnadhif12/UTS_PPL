@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table company_profile.sessions: ~0 rows (approximately)
+-- Dumping data for table company_profile.sessions: ~0 rows (approximately)                                             
 
 -- Dumping structure for table company_profile.users
 DROP TABLE IF EXISTS `users`;
