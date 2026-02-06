@@ -50,7 +50,7 @@
     <div class="about-container">
         <div class="about-grid">
             <div class="about-image" data-aos="fade-right">
-                <img src="{{ asset('images/logo/logo.png') }}" alt="About Us">
+                <img src="{{ asset('images/hero/3.png') }}" alt="About Us"> <-
                 <div class="about-image-decoration"></div>
                 <div class="about-experience">
                     <h3>10+</h3>
