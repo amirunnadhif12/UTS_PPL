@@ -3,110 +3,111 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero">
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <!-- Slideshow Background -->
-    <div class="hero-slideshow">
-        <div class="hero-slide active"></div>
-        <div class="hero-slide"></div>
-        <div class="hero-slide"></div>
+    <div class="absolute inset-0 z-0">
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500 active" style="background-image: url('/images/hero/hero-1.jpg');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500" style="background-image: url('/images/hero/hero-2.jpg');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500" style="background-image: url('/images/hero/hero-3.jpg');"></div>
     </div>
     
     <!-- Overlay -->
-    <div class="hero-overlay"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-dark/70 z-1"></div>
     
-    <div class="hero-decoration hero-decoration-1"></div>
-    <div class="hero-decoration hero-decoration-2"></div>
+    <!-- Decorative Elements -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 border-2 border-secondary/20 rounded-full pointer-events-none animate-spin-slow"></div>
+    <div class="absolute -bottom-36 -left-36 w-[500px] h-[500px] border-2 border-secondary/20 rounded-full pointer-events-none animate-spin-slow-reverse"></div>
     
-    <div class="hero-content" data-aos="fade-up">
-        <span class="hero-subtitle">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-        <h1 class="hero-title">
+    <div class="text-center text-white z-10 px-8 max-w-4xl" data-aos="fade-up">
+        <span class="inline-block bg-secondary/20 border border-secondary/40 text-secondary px-6 py-2 rounded-full text-3xl font-medium tracking-wider mb-6 font-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
             Muslim Fashion
-            <span>Excellence</span>
+            <span class="text-secondary block">Excellence</span>
         </h1>
-        <p class="hero-description">
+        <p class="text-xl opacity-90 mb-10 leading-relaxed">
             Produsen terpercaya footwear muslim, kopyah premium, dan baju gamis berkualitas tinggi. 
             Menghadirkan produk dengan sentuhan islami yang elegan untuk keluarga muslim Indonesia.
         </p>
-        <div class="hero-buttons">
-            <a href="/products" class="btn btn-primary">
+        <div class="flex gap-4 justify-center flex-wrap">
+            <a href="/products" class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                 <i class="fas fa-shopping-bag"></i>
                 Lihat Produk
             </a>
-            <a href="/about" class="btn btn-secondary">
+            <a href="/about" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 border-white text-white transition-all duration-300 hover:bg-white hover:text-primary-dark">
                 <i class="fas fa-info-circle"></i>
                 Tentang Kami
             </a>
         </div>
     </div>
 
-    <div class="hero-scroll">
-        <span>Scroll Down</span>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-white opacity-70 animate-bounce">
+        <span class="text-xs mb-2">Scroll Down</span>
         <i class="fas fa-chevron-down"></i>
     </div>
 </section>
 
 <!-- About Section -->
-<section class="about-section">
-    <div class="about-container">
-        <div class="about-grid">
-            <div class="about-image" data-aos="fade-right">
-                <img src="{{ asset('images/hero/3.png') }}" alt="About Us"> <-
-                <div class="about-image-decoration"></div>
-                <div class="about-experience">
-                    <h3>10+</h3>
-                    <p>Tahun Pengalaman</p>
+<section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative" data-aos="fade-right">
+                <img src="{{ asset('images/hero/3.png') }}" alt="About Us" class="w-full rounded-2xl shadow-2xl">
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-gold-gradient rounded-2xl -z-10"></div>
+                <div class="absolute bottom-8 -left-8 bg-primary text-white p-8 rounded-2xl text-center shadow-xl">
+                    <h3 class="text-5xl font-extrabold text-secondary leading-none">10+</h3>
+                    <p class="text-sm mt-2">Tahun Pengalaman</p>
                 </div>
             </div>
 
-            <div class="about-content" data-aos="fade-left">
-                <h4>Tentang Kami</h4>
-                <h2>Menyediakan Produk Fashion Muslim Berkualitas</h2>
-                <p>
+            <div data-aos="fade-left">
+                <h4 class="text-secondary font-semibold text-sm uppercase tracking-widest mb-4">Tentang Kami</h4>
+                <h2 class="text-4xl font-bold text-primary-dark mb-6 leading-tight">Menyediakan Produk Fashion Muslim Berkualitas</h2>
+                <p class="text-gray-600 leading-relaxed mb-8">
                     PT Assabar Sukses Berkah adalah perusahaan yang bergerak di bidang produksi 
                     fashion muslim dengan fokus pada kualitas dan nilai-nilai islami. Kami berkomitmen 
                     untuk menghadirkan produk terbaik yang memenuhi kebutuhan umat muslim Indonesia.
                 </p>
 
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl shrink-0">
                             <i class="fas fa-award"></i>
                         </div>
                         <div>
-                            <h5>Kualitas Premium</h5>
-                            <p>Bahan berkualitas tinggi</p>
+                            <h5 class="font-semibold text-primary-dark mb-1">Kualitas Premium</h5>
+                            <p class="text-sm text-gray-500">Bahan berkualitas tinggi</p>
                         </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl shrink-0">
                             <i class="fas fa-hand-holding-heart"></i>
                         </div>
                         <div>
-                            <h5>Nilai Islami</h5>
-                            <p>Sesuai syariat Islam</p>
+                            <h5 class="font-semibold text-primary-dark mb-1">Nilai Islami</h5>
+                            <p class="text-sm text-gray-500">Sesuai syariat Islam</p>
                         </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl shrink-0">
                             <i class="fas fa-truck"></i>
                         </div>
                         <div>
-                            <h5>Pengiriman Cepat</h5>
-                            <p>Seluruh Indonesia</p>
+                            <h5 class="font-semibold text-primary-dark mb-1">Pengiriman Cepat</h5>
+                            <p class="text-sm text-gray-500">Seluruh Indonesia</p>
                         </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl shrink-0">
                             <i class="fas fa-headset"></i>
                         </div>
                         <div>
-                            <h5>Support 24/7</h5>
-                            <p>Layanan pelanggan</p>
+                            <h5 class="font-semibold text-primary-dark mb-1">Support 24/7</h5>
+                            <p class="text-sm text-gray-500">Layanan pelanggan</p>
                         </div>
                     </div>
                 </div>
 
-                <a href="/about" class="btn btn-primary">
+                <a href="/about" class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     <i class="fas fa-arrow-right"></i>
                     Selengkapnya
                 </a>
@@ -116,52 +117,53 @@
 </section>
 
 <!-- Products Section -->
-<section class="products-section">
-    <div class="products-container">
-        <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Produk Kami</span>
-            <h2>Produk Unggulan</h2>
-            <div class="divider">
-                <span></span>
-                <i class="fas fa-star"></i>
-                <span></span>
+<section class="py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-secondary font-semibold text-sm uppercase tracking-widest block mb-3">Produk Kami</span>
+            <h2 class="text-4xl font-bold text-primary-dark mb-4">Produk Unggulan</h2>
+            <div class="flex items-center justify-center gap-4">
+                <span class="w-16 h-0.5 bg-secondary"></span>
+                <i class="fas fa-star text-secondary text-2xl"></i>
+                <span class="w-16 h-0.5 bg-secondary"></span>
             </div>
         </div>
 
-        <div class="products-grid">
+        <div class="grid md:grid-cols-3 gap-10">
             <!-- Product 1 - Jubah -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="product-image">
-                    <img src="/images/produkunggulan/juba-1.png" alt="Jubah">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
+                    <img src="/images/produkunggulan/juba-1.png" alt="Jubah" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
-                <div class="product-content">
-                    <h3>Jubah</h3>
-                    <a href="/products?category=jubah" class="product-link">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
+                    <a href="/products?category=jubah" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Product 2 - Baju Koko -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <img src="/images/produkunggulan/bajukoko.png" alt="Baju Koko">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
+                    <img src="/images/produkunggulan/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
-                <div class="product-content">
-                    <h3>Baju Koko</h3>
-                    <a href="/products?category=koko" class="product-link">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Baju Koko</h3>
+                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
-             <!-- Product 3 -   Jubah -->
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-image">
-                    <img src="/images/produkunggulan/juba-2.jpeg" alt="Jubah">
+
+            <!-- Product 3 - Jubah -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
+                    <img src="/images/produkunggulan/juba-2.jpeg" alt="Jubah" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
-                <div class="product-content">
-                    <h3>Jubah</h3>
-                    <a href="/products?category=jubah" class="product-link">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
+                    <a href="/products?category=jubah" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -171,137 +173,131 @@
 </section>
 
 <!-- Stats Section -->
-<section class="stats-section">
-    <div class="stats-container">
-        <div class="stats-grid">
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-icon">
+<section class="py-24 bg-islamic-gradient relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%23d4af37\'/%3E%3C/svg%3E');"></div>
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="text-white" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
                     <i class="fas fa-users"></i>
                 </div>
-                <div class="stat-number">5000+</div>
-                <div class="stat-label">Pelanggan Puas</div>
+                <div class="text-5xl font-extrabold text-secondary mb-2">5000+</div>
+                <div class="opacity-80">Pelanggan Puas</div>
             </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-icon">
+            <div class="text-white" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
                     <i class="fas fa-box"></i>
                 </div>
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Jenis Produk</div>
+                <div class="text-5xl font-extrabold text-secondary mb-2">100+</div>
+                <div class="opacity-80">Jenis Produk</div>
             </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-icon">
+            <div class="text-white" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <div class="stat-number">34</div>
-                <div class="stat-label">Provinsi Terjangkau</div>
+                <div class="text-5xl font-extrabold text-secondary mb-2">34</div>
+                <div class="opacity-80">Provinsi Terjangkau</div>
             </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-icon">
+            <div class="text-white" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
                     <i class="fas fa-star"></i>
                 </div>
-                <div class="stat-number">4.9</div>
-                <div class="stat-label">Rating Pelanggan</div>
+                <div class="text-5xl font-extrabold text-secondary mb-2">4.9</div>
+                <div class="opacity-80">Rating Pelanggan</div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Artikel Section -->
-<section class="artikel-section">
-    <div class="artikel-container">
-        <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Artikel Terbaru</span>
-            <h2>Berita & Informasi</h2>
-            <div class="divider">
-                <span></span>
-                <i class="fas fa-newspaper"></i>
-                <span></span>
+<section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-secondary font-semibold text-sm uppercase tracking-widest block mb-3">Artikel Terbaru</span>
+            <h2 class="text-4xl font-bold text-primary-dark mb-4">Berita & Informasi</h2>
+            <div class="flex items-center justify-center gap-4">
+                <span class="w-16 h-0.5 bg-secondary"></span>
+                <i class="fas fa-newspaper text-secondary text-2xl"></i>
+                <span class="w-16 h-0.5 bg-secondary"></span>
             </div>
         </div>
 
-        <div class="artikel-grid">
+        <div class="grid md:grid-cols-3 gap-8">
             <!-- Artikel 1 -->
-            <div class="artikel-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="artikel-image">
-                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Artikel 1">
-                    <span class="artikel-category">Tips</span>
+            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Artikel 1" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Tips</span>
                 </div>
-                <div class="artikel-content">
-                    <div class="artikel-date">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
                         <i class="far fa-calendar-alt"></i>
                         <span>1 Februari 2026</span>
                     </div>
-                    <h3>Cara Memilih Kopyah yang Nyaman untuk Sholat</h3>
-                    <p>Panduan lengkap memilih kopyah berkualitas yang nyaman digunakan untuk ibadah sehari-hari dan acara formal.</p>
-                    <a href="#" class="artikel-link">
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Cara Memilih Kopyah yang Nyaman untuk Sholat</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Panduan lengkap memilih kopyah berkualitas yang nyaman digunakan untuk ibadah sehari-hari dan acara formal.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Artikel 2 -->
-            <div class="artikel-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="artikel-image">
-                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Artikel 2">
-                    <span class="artikel-category">Fashion</span>
+            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Artikel 2" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 bg-secondary text-primary-dark px-3 py-1 rounded-full text-xs font-semibold">Fashion</span>
                 </div>
-                <div class="artikel-content">
-                    <div class="artikel-date">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
                         <i class="far fa-calendar-alt"></i>
                         <span>28 Januari 2026</span>
                     </div>
-                    <h3>Tren Gamis Modern 2026 yang Tetap Syar'i</h3>
-                    <p>Eksplorasi desain gamis terbaru yang menggabungkan gaya modern dengan tetap menjaga nilai-nilai syar'i.</p>
-                    <a href="#" class="artikel-link">
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Tren Gamis Modern 2026 yang Tetap Syar'i</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Eksplorasi desain gamis terbaru yang menggabungkan gaya modern dengan tetap menjaga nilai-nilai syar'i.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Artikel 3 -->
-            <div class="artikel-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="artikel-image">
-                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=250&fit=crop" alt="Artikel 3">
-                    <span class="artikel-category">Perusahaan</span>
+            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=250&fit=crop" alt="Artikel 3" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 bg-dark text-white px-3 py-1 rounded-full text-xs font-semibold">Perusahaan</span>
                 </div>
-                <div class="artikel-content">
-                    <div class="artikel-date">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
                         <i class="far fa-calendar-alt"></i>
                         <span>20 Januari 2026</span>
                     </div>
-                    <h3>PT Assabar Sukses Berkah Raih Penghargaan UMKM</h3>
-                    <p>Pencapaian terbaru perusahaan dalam mengembangkan produk fashion muslim berkualitas di Indonesia.</p>
-                    <a href="#" class="artikel-link">
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">PT Assabar Sukses Berkah Raih Penghargaan UMKM</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Pencapaian terbaru perusahaan dalam mengembangkan produk fashion muslim berkualitas di Indonesia.</p>
+                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="artikel-more" data-aos="fade-up">
-            <a href="/artikel" class="btn btn-outline-gold">
-                <i class="fas fa-th-large"></i>
-                Lihat Semua Artikel
-            </a>
-        </div> -->
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
-    <div class="cta-container" data-aos="fade-up">
-        <div class="cta-content">
-            <h2>Siap Berbelanja?</h2>
-            <p>
+<section class="py-24 bg-cream">
+    <div class="max-w-4xl mx-auto px-8" data-aos="fade-up">
+        <div class="bg-islamic-gradient rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl">
+            <h2 class="text-4xl font-bold mb-4">Siap Berbelanja?</h2>
+            <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
                 Temukan koleksi lengkap fashion muslim berkualitas kami. 
                 Hubungi kami sekarang untuk pemesanan atau informasi lebih lanjut.
             </p>
-            <div class="cta-buttons">
-                <a href="/products" class="btn btn-primary">
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="/products" class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     <i class="fas fa-shopping-bag"></i>
                     Lihat Katalog
                 </a>
-                <a href="/contact" class="btn btn-green">
+                <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-green-500 text-white transition-all duration-300 hover:bg-green-600 hover:-translate-y-1">
                     <i class="fab fa-whatsapp"></i>
                     Hubungi Kami
                 </a>
@@ -319,695 +315,39 @@
 
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
+        slides[currentSlide].style.opacity = '0';
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
+        slides[currentSlide].style.opacity = '1';
     }
 
     // Change slide every 5 seconds
     setInterval(nextSlide, 5000);
+
+    // Initialize first slide
+    if (slides.length > 0) {
+        slides[0].style.opacity = '1';
+    }
 </script>
 @endpush
 
 @push('styles')
 <style>
-    /* Hero Section with Slideshow */
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Slideshow Background */
-    .hero-slideshow {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-    }
-
-    .hero-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out;
-    }
-
     .hero-slide.active {
-        opacity: 1;
+        opacity: 1 !important;
     }
-
-    .hero-slide:nth-child(1) {
-        background-image: url('/images/hero/hero-1.jpg');
-    }
-
-    .hero-slide:nth-child(2) {
-        background-image: url('/images/hero/hero-2.jpg');
-    }
-
-    .hero-slide:nth-child(3) {
-        background-image: url('/images/hero/hero-3.jpg');
-    }
-
-    /* Overlay */
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            180deg,
-            rgba(26, 86, 50, 0.7) 0%,
-            rgba(26, 86, 50, 0.5) 50%,
-            rgba(26, 26, 46, 0.7) 100%
-        );
-        z-index: 1;
-    }
-
-    /* Decorative Elements */
-    .hero-decoration {
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        border: 2px solid rgba(212, 175, 55, 0.2);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .hero-decoration-1 {
-        top: -100px;
-        right: -100px;
-        animation: rotate 30s linear infinite;
-    }
-
-    .hero-decoration-2 {
-        bottom: -150px;
-        left: -150px;
-        width: 500px;
-        height: 500px;
-        animation: rotate 40s linear infinite reverse;
-    }
-
-    @keyframes rotate {
+    
+    @keyframes spin-slow {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
     }
-
-    .hero-content {
-        text-align: center;
-        color: white;
-        z-index: 10;
-        padding: 0 2rem;
-        max-width: 900px;
-    }
-
-    .hero-subtitle {
-        display: inline-block;
-        background: rgba(212, 175, 55, 0.2);
-        border: 1px solid rgba(212, 175, 55, 0.4);
-        color: var(--secondary);
-        padding: 0.5rem 1.5rem;
-        border-radius: 50px;
-        font-size: 3rem;
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-title {
-        font-size: 4rem;
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-title span {
-        color: var(--secondary);
-        display: block;
-    }
-
-    .hero-description {
-        font-size: 1.25rem;
-        opacity: 0.9;
-        margin-bottom: 2.5rem;
-        line-height: 1.7;
-    }
-
-    .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero-scroll {
-        position: absolute;
-        bottom: 3rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        opacity: 0.7;
-        animation: bounce 2s infinite;
-    }
-
-    .hero-scroll span {
-        font-size: 0.8rem;
-        margin-bottom: 0.5rem;
-    }
-
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-        40% { transform: translateX(-50%) translateY(-10px); }
-        60% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    /* About Section */
-    .about-section {
-        padding: 8rem 0;
-        background: white
-        ;
-    }
-
-    .about-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        align-items: center;
-    }
-
-    .about-image {
-        position: relative;
-    }
-
-    .about-image img {
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .about-image-decoration {
-        position: absolute;
-        bottom: -30px;
-        right: -30px;
-        width: 200px;
-        height: 200px;
-        background: var(--gold-gradient);
-        border-radius: 20px;
-        z-index: -1;
-    }
-
-    .about-experience {
-        position: absolute;
-        bottom: 30px;
-        left: -30px;
-        background: var(--primary);
-        color: white;
-        padding: 2rem;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 15px 40px rgba(26, 86, 50, 0.4);
-    }
-
-    .about-experience h3 {
-        font-size: 3rem;
-        font-weight: 800;
-        color: var(--secondary);
-        line-height: 1;
-    }
-
-    .about-experience p {
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-    }
-
-    .about-content h4 {
-        color: var(--secondary);
-        font-weight: 600;
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 1rem;
-    }
-
-    .about-content h2 {
-        font-size: 2.75rem;
-        color: var(--primary-dark);
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-
-    .about-content p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-    }
-
-    .about-features {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .about-feature {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .about-feature-icon {
-        width: 50px;
-        height: 50px;
-        background: rgba(26, 86, 50, 0.1);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-        font-size: 1.25rem;
-        flex-shrink: 0;
-    }
-
-    .about-feature h5 {
-        font-size: 1rem;
-        color: var(--primary-dark);
-        margin-bottom: 0.25rem;
-    }
-
-    .about-feature p {
-        font-size: 0.85rem;
-        color: #888;
-        margin: 0;
-    }
-
-    /* Products Section */
-    .products-section {
-        padding: 8rem 0;
-        background: var(--cream);
-    }
-
-    .products-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-    }
-
-    .product-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s ease;
-        position: relative;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .product-image {
-        height: 400px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .product-card:hover .product-image img {
-        transform: scale(1.1);
-    }
-
-    .product-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .product-icon {
-        width: 120px;
-        height: 120px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3.5rem;
-        color: var(--secondary);
-        position: relative;
-        z-index: 1;
-    }
-
-    .product-badge {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: var(--secondary);
-        color: var(--primary-dark);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-
-    .product-content {
-        padding: 2rem;
-    }
-
-    .product-content h3 {
-        font-size: 1.5rem;
-        color: var(--primary-dark);
-        margin-bottom: 0.75rem;
-    }
-
-    .product-content p {
-        color: #666;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-    }
-
-    .product-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--primary);
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .product-link:hover {
-        color: var(--secondary);
-        gap: 0.75rem;
-    }
-
-    /* Stats Section */
-    .stats-section {
-        padding: 6rem 0;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .stats-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-    }
-
-    .stats-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
-        text-align: center;
-    }
-
-    .stat-item {
-        color: white;
-    }
-
-    .stat-icon {
-        width: 70px;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 1.75rem;
-        color: var(--secondary);
-    }
-
-    .stat-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: var(--secondary);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-        font-size: 1rem;
-        opacity: 0.9;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 8rem 0;
-        background: white;
-        text-align: center;
-    }
-
-    .cta-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .cta-content h2 {
-        font-size: 2.75rem;
-        color: var(--primary-dark);
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-content p {
-        font-size: 1.15rem;
-        color: #666;
-        margin-bottom: 2.5rem;
-        line-height: 1.7;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .btn-green {
-        background: var(--primary);
-        color: white;
-    }
-
-    .btn-green:hover {
-        background: var(--primary-dark);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(26, 86, 50, 0.4);
-    }
-
-       /* Artikel Section */
-    .artikel-section {
-        padding: 8rem 0;
-        background: var(--cream);
-    }
-
-    .artikel-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .artikel-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .artikel-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s ease;
-    }
-
-    .artikel-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .artikel-image {
-        height: 200px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .artikel-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-    }
-
-    .artikel-card:hover .artikel-image img {
-        transform: scale(1.1);
-    }
-
-    .artikel-category {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        background: var(--secondary);
-        color: var(--primary-dark);
-        padding: 0.35rem 1rem;
-        border-radius: 50px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-
-    .artikel-content {
-        padding: 1.5rem;
-    }
-
-    .artikel-date {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #888;
-        font-size: 0.85rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .artikel-date i {
-        color: var(--secondary);
-    }
-
-    .artikel-content h3 {
-        font-size: 1.25rem;
-        color: var(--primary-dark);
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .artikel-content p {
-        color: #666;
-        font-size: 0.9rem;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .artikel-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--primary);
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .artikel-link:hover {
-        color: var(--secondary);
-        gap: 0.75rem;
-    }
-
-    .artikel-more {
-        text-align: center;
-        margin-top: 3rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .artikel-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .artikel-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .hero-title { font-size: 3rem; }
-        .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-        .products-grid { grid-template-columns: repeat(2, 1fr); }
-        .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-
-    }
-
-    @media (max-width: 768px) {
-        .hero-title { font-size: 2.25rem; }
-        .hero-description { font-size: 1rem; }
-        .products-grid { grid-template-columns: 1fr; }
-        .about-features { grid-template-columns: 1fr; }
-        .about-experience { position: relative; left: 0; bottom: 0; margin-top: 1.5rem; }
-        .about-image-decoration { display: none; }
-        .section-title h2 { font-size: 1.75rem; }
-        .about-content h2 { font-size: 2rem; }
-        .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        .stat-number { font-size: 2.5rem; }
-        .cta-content h2 { font-size: 2rem; }
+    
+    .animate-spin-slow {
+        animation: spin-slow 30s linear infinite;
+    }
+    
+    .animate-spin-slow-reverse {
+        animation: spin-slow 40s linear infinite reverse;
     }
 </style>
 @endpush
-
-

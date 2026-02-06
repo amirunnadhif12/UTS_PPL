@@ -2,56 +2,60 @@
 @section('title', 'Kelola Produk')
 
 @section('content')
-<div class="admin-header">
-    <h1><i class="fas fa-box"></i> Kelola Produk</h1>
-    <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
+<div class="flex justify-between items-center mb-8">
+    <h1 class="text-2xl font-bold text-dark flex items-center gap-3">
+        <i class="fas fa-box text-primary"></i> Kelola Produk
+    </h1>
+    <a href="{{ route('admin.products.create') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <i class="fas fa-plus"></i> Tambah Produk
     </a>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        <i class="fas fa-list"></i> Daftar Produk ({{ $products->count() }})
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="px-6 py-4 bg-gradient-to-r from-cream to-white border-b border-gray-100 flex items-center gap-3 font-semibold text-dark">
+        <i class="fas fa-list text-primary"></i> Daftar Produk ({{ $products->count() }})
     </div>
-    <div class="card-body" style="padding: 0;">
+    <div class="overflow-x-auto">
         @if($products->count() > 0)
-            <table class="table">
+            <table class="w-full">
                 <thead>
                     <tr>
-                        <th>Gambar</th>
-                        <th>Nama Produk</th>
-                        <th>Kategori</th>
-                        <th>Deskripsi</th>
-                        <th>Tanggal Dibuat</th>
-                        <th>Aksi</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Gambar</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Nama Produk</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Kategori</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Deskripsi</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Tanggal</th>
+                        <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($products as $product)
-                    <tr>
-                        <td>
+                    <tr class="hover:bg-gradient-to-r hover:from-primary/5 hover:to-secondary/5 transition-all duration-300">
+                        <td class="px-5 py-4 border-b border-gray-50">
                             @if($product->gambar1)
-                                <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}">
+                                <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}" class="w-16 h-16 object-cover rounded-xl shadow-md">
                             @else
-                                <div style="width: 60px; height: 60px; background: #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-image" style="color: #ccc;"></i>
+                                <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-image text-gray-300"></i>
                                 </div>
                             @endif
                         </td>
-                        <td><strong>{{ $product->nama_produk }}</strong></td>
-                        <td><span class="badge badge-primary">{{ $product->kategori }}</span></td>
-                        <td>{{ Str::limit($product->deskripsi, 50) }}</td>
-                        <td>{{ $product->tanggal_dibuat ? $product->tanggal_dibuat->format('d M Y') : '-' }}</td>
-                        <td>
-                            <div class="actions">
-                                <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-secondary btn-sm" title="Edit">
-                                    <i class="fas fa-edit"></i>
+                        <td class="px-5 py-4 border-b border-gray-50 font-semibold text-dark">{{ $product->nama_produk }}</td>
+                        <td class="px-5 py-4 border-b border-gray-50">
+                            <span class="inline-block px-4 py-1.5 bg-gradient-to-r from-primary/10 to-primary/15 text-primary rounded-full text-xs font-semibold">{{ $product->kategori }}</span>
+                        </td>
+                        <td class="px-5 py-4 border-b border-gray-50 text-gray-600 text-sm">{{ Str::limit($product->deskripsi, 50) }}</td>
+                        <td class="px-5 py-4 border-b border-gray-50 text-gray-500 text-sm">{{ $product->tanggal_dibuat ? $product->tanggal_dibuat->format('d M Y') : '-' }}</td>
+                        <td class="px-5 py-4 border-b border-gray-50">
+                            <div class="flex gap-2">
+                                <a href="{{ route('admin.products.edit', $product->id) }}" class="inline-flex items-center justify-center w-9 h-9 bg-gold-gradient text-dark rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" title="Edit">
+                                    <i class="fas fa-edit text-sm"></i>
                                 </a>
                                 <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Hapus">
-                                        <i class="fas fa-trash"></i>
+                                    <button type="submit" class="inline-flex items-center justify-center w-9 h-9 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" title="Hapus">
+                                        <i class="fas fa-trash text-sm"></i>
                                     </button>
                                 </form>
                             </div>
@@ -61,10 +65,10 @@
                 </tbody>
             </table>
         @else
-            <div class="empty-state">
-                <i class="fas fa-box-open"></i>
-                <h3>Belum Ada Produk</h3>
-                <p>Klik tombol "Tambah Produk" untuk menambahkan produk baru.</p>
+            <div class="text-center py-16 px-8">
+                <i class="fas fa-box-open text-6xl text-gray-200 mb-4 block"></i>
+                <h3 class="text-lg font-semibold text-dark mb-2">Belum Ada Produk</h3>
+                <p class="text-gray-500">Klik tombol "Tambah Produk" untuk menambahkan produk baru.</p>
             </div>
         @endif
     </div>

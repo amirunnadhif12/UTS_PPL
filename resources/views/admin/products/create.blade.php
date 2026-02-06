@@ -1,131 +1,85 @@
 @extends('admin.layouts.admin')
 @section('title', 'Tambah Produk')
 
-@push('styles')
-<style>
-    .section-title {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        margin: 2.5rem 0 1rem;
-        padding-bottom: 0.8rem;
-        border-bottom: 2px solid #eee;
-        color: var(--dark);
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-    .section-title i {
-        color: var(--primary);
-        font-size: 1.2rem;
-    }
-    .required-star {
-        color: #dc3545;
-        margin-left: 2px;
-    }
-    .form-actions {
-        margin-top: 2.5rem;
-        padding-top: 1.5rem;
-        border-top: 2px solid #eee;
-        display: flex;
-        gap: 1rem;
-    }
-    .image-upload-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
-    }
-    @media (max-width: 992px) {
-        .image-upload-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    @media (max-width: 576px) {
-        .image-upload-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-</style>
-@endpush
-
 @section('content')
-<div class="admin-header">
-    <h1><i class="fas fa-plus-circle"></i> Tambah Produk Baru</h1>
-    <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">
+<div class="flex justify-between items-center mb-8">
+    <h1 class="text-2xl font-bold text-dark flex items-center gap-3">
+        <i class="fas fa-plus-circle text-primary"></i> Tambah Produk Baru
+    </h1>
+    <a href="{{ route('admin.products.index') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-gradient text-dark rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <i class="fas fa-arrow-left"></i> Kembali
     </a>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        <i class="fas fa-edit"></i> Form Tambah Produk
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="px-6 py-4 bg-gradient-to-r from-cream to-white border-b border-gray-100 flex items-center gap-3 font-semibold text-dark">
+        <i class="fas fa-edit text-primary"></i> Form Tambah Produk
     </div>
-    <div class="card-body">
+    <div class="p-6">
         <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group">
-                        <label class="form-label" for="nama_produk">Nama Produk <span style="color: red;">*</span></label>
-                        <input type="text" name="nama_produk" id="nama_produk" class="form-control" 
-                               value="{{ old('nama_produk') }}" required placeholder="Masukkan nama produk">
-                        @error('nama_produk')
-                            <span class="form-text" style="color: red;">{{ $message }}</span>
-                        @enderror
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block mb-2 font-semibold text-dark text-sm" for="nama_produk">Nama Produk <span class="text-red-500">*</span></label>
+                    <input type="text" name="nama_produk" id="nama_produk" 
+                           class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl font-sans transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 hover:border-gray-300" 
+                           value="{{ old('nama_produk') }}" required placeholder="Masukkan nama produk">
+                    @error('nama_produk')
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
                 </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label class="form-label" for="kategori">Kategori <span style="color: red;">*</span></label>
-                        <select name="kategori" id="kategori" class="form-control" required>
-                            <option value="">Pilih Kategori</option>
-                            <option value="Jubah" {{ old('kategori') == 'Jubah' ? 'selected' : '' }}>Jubah</option>
-                            <option value="Baju Koko" {{ old('kategori') == 'Baju Koko' ? 'selected' : '' }}>Baju Koko</option>
-                            <option value="Songkok" {{ old('kategori') == 'Songkok' ? 'selected' : '' }}>Songkok</option>
-                            <option value="Peci" {{ old('kategori') == 'Peci' ? 'selected' : '' }}>Peci</option>
-                        </select>
-                        @error('kategori')
-                            <span class="form-text" style="color: red;">{{ $message }}</span>
-                        @enderror
-                    </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-dark text-sm" for="kategori">Kategori <span class="text-red-500">*</span></label>
+                    <select name="kategori" id="kategori" 
+                            class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl font-sans transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 hover:border-gray-300 cursor-pointer appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] pr-10" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="Jubah" {{ old('kategori') == 'Jubah' ? 'selected' : '' }}>Jubah</option>
+                        <option value="Baju Koko" {{ old('kategori') == 'Baju Koko' ? 'selected' : '' }}>Baju Koko</option>
+                        <option value="Songkok" {{ old('kategori') == 'Songkok' ? 'selected' : '' }}>Songkok</option>
+                        <option value="Peci" {{ old('kategori') == 'Peci' ? 'selected' : '' }}>Peci</option>
+                    </select>
+                    @error('kategori')
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="deskripsi">Deskripsi Produk</label>
-                <textarea name="deskripsi" id="deskripsi" class="form-control" 
+            <div class="mt-6">
+                <label class="block mb-2 font-semibold text-dark text-sm" for="deskripsi">Deskripsi Produk</label>
+                <textarea name="deskripsi" id="deskripsi" 
+                          class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl font-sans transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 hover:border-gray-300 min-h-32 resize-y" 
                           placeholder="Masukkan deskripsi produk">{{ old('deskripsi') }}</textarea>
                 @error('deskripsi')
-                    <span class="form-text" style="color: red;">{{ $message }}</span>
+                    <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                 @enderror
             </div>
 
-            <h4 class="section-title">
-                <i class="fas fa-images"></i> Gambar Produk
+            <h4 class="flex items-center gap-3 mt-10 mb-4 pb-3 border-b-2 border-gray-100 text-dark text-lg font-semibold">
+                <i class="fas fa-images text-primary text-xl"></i> Gambar Produk
             </h4>
-            <p class="form-text" style="margin-bottom: 1.5rem;">Upload hingga 5 gambar produk (format: JPG, PNG, GIF, WebP. Max: 2MB per gambar)</p>
+            <p class="text-gray-500 text-sm mb-6">Upload hingga 5 gambar produk (format: JPG, PNG, GIF, WebP.)</p>
 
-            <div class="image-upload-grid">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 @for($i = 1; $i <= 5; $i++)
                 <div>
-                    <div class="form-group">
-                        <label class="form-label" for="gambar{{ $i }}">Gambar {{ $i }}</label>
-                        <input type="file" name="gambar{{ $i }}" id="gambar{{ $i }}" class="form-control" 
-                               accept="image/*" onchange="previewImage(this, 'preview{{ $i }}')">
-                        <div id="preview{{ $i }}" class="image-preview"></div>
-                        @error('gambar' . $i)
-                            <span class="form-text" style="color: red;">{{ $message }}</span>
-                        @enderror
-                    </div>
+                    <label class="block mb-2 font-medium text-dark text-sm" for="gambar{{ $i }}">Gambar {{ $i }}</label>
+                    <input type="file" name="gambar{{ $i }}" id="gambar{{ $i }}" 
+                           class="w-full py-2 px-3 border-2 border-gray-200 rounded-xl text-sm transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:font-medium file:cursor-pointer" 
+                           accept="image/*" onchange="previewImage(this, 'preview{{ $i }}')">
+                    <div id="preview{{ $i }}" class="mt-2"></div>
+                    @error('gambar' . $i)
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
                 </div>
                 @endfor
             </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">
+            <div class="mt-10 pt-6 border-t-2 border-gray-100 flex gap-4">
+                <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <i class="fas fa-save"></i> Simpan Produk
                 </button>
-                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.products.index') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-300">
                     <i class="fas fa-times"></i> Batal
                 </a>
             </div>
@@ -145,11 +99,7 @@ function previewImage(input, previewId) {
         reader.onload = function(e) {
             const img = document.createElement('img');
             img.src = e.target.result;
-            img.style.width = '100px';
-            img.style.height = '100px';
-            img.style.objectFit = 'cover';
-            img.style.borderRadius = '8px';
-            img.style.border = '2px solid #e0e0e0';
+            img.className = 'w-24 h-24 object-cover rounded-xl border-2 border-gray-200';
             preview.appendChild(img);
         }
         reader.readAsDataURL(input.files[0]);

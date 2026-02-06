@@ -51,11 +51,11 @@ class ProductController extends Controller
             'nama_produk' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
@@ -103,11 +103,11 @@ class ProductController extends Controller
             'nama_produk' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
