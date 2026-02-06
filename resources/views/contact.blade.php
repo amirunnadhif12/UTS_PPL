@@ -56,6 +56,16 @@
 
                     <li class="info-item">
                         <div class="info-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Whatsapp</h4>
+                            <p><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
+                        </div>
+                    </li>
+
+                    <li class="info-item">
+                        <div class="info-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="info-content">

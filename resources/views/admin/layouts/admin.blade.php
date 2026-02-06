@@ -4,12 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Admin Panel') - PT Assabar Sukses Berkah</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo.png') }}">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    </head>
+<body>
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="sidebar-logo">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                <div class="sidebar-brand-text">
+                    <h2>Admin Panel</h2>
+                    <span>PT Assabar Sukses Berkah</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-content">
+            <span class="sidebar-menu-label">Menu Utama</span>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="/" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                        Lihat Website
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
+                        <i class="fas fa-box"></i>
+                        Kelola Produk
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Info & Logout -->
+            <div class="sidebar-user">
+                <div class="sidebar-user-info">
+                    <div class="sidebar-user-avatar">
+                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                    </div>
+                    <div>
+                        <div class="sidebar-user-name">{{ Auth::user()->name }}</div>
+                        <div class="sidebar-user-email">{{ Auth::user()->email }}</div>
+                    </div>
+                </div>
+                <form action="{{ route('admin.logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Keluar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        @if(session('success'))
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ session('error') }}
+            </div>
+        @endif
+
+        @yield('content')
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.mobile-toggle');
+            
+            if (window.innerWidth <= 992) {
+                if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+    </script>
+    @stack('scripts')
+</body>
     
     <style>
         :root {
@@ -752,102 +857,5 @@
         }
     </style>
     @stack('styles')
-</head>
-<body>
-    <!-- Mobile Toggle -->
-    <button class="mobile-toggle" onclick="toggleSidebar()">
-        <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-brand">
-                <div class="sidebar-logo">
-                    <i class="fas fa-mosque"></i>
-                </div>
-                <div class="sidebar-brand-text">
-                    <h2>Admin Panel</h2>
-                    <span>PT Assabar Sukses Berkah</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="sidebar-content">
-            <span class="sidebar-menu-label">Menu Utama</span>
-            <ul class="sidebar-menu">
-                <li>
-                    <a href="/" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                        Lihat Website
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
-                        <i class="fas fa-box"></i>
-                        Kelola Produk
-                    </a>
-                </li>
-            </ul>
-
-            <!-- User Info & Logout -->
-            <div class="sidebar-user">
-                <div class="sidebar-user-info">
-                    <div class="sidebar-user-avatar">
-                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
-                    </div>
-                    <div>
-                        <div class="sidebar-user-name">{{ Auth::user()->name }}</div>
-                        <div class="sidebar-user-email">{{ Auth::user()->email }}</div>
-                    </div>
-                </div>
-                <form action="{{ route('admin.logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn-logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Keluar
-                    </button>
-                </form>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        @if(session('success'))
-            <div class="alert alert-success">
-                <i class="fas fa-check-circle"></i>
-                {{ session('success') }}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                <i class="fas fa-exclamation-circle"></i>
-                {{ session('error') }}
-            </div>
-        @endif
-
-        @yield('content')
-    </main>
-
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(e) {
-            const sidebar = document.getElementById('sidebar');
-            const toggle = document.querySelector('.mobile-toggle');
-            
-            if (window.innerWidth <= 992) {
-                if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
-                    sidebar.classList.remove('active');
-                }
-            }
-        });
-    </script>
-    @stack('scripts')
-</body>
 </html>
