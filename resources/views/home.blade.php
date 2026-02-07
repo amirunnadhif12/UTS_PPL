@@ -130,14 +130,14 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-10">
-            <!-- Product 1 - Jubah -->
+            <!-- Product 1 - Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produkunggulan/juba-1.png" alt="Jubah" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/gamis-1.png" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
-                    <a href="/products?category=jubah" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -146,24 +146,24 @@
             <!-- Product 2 - Baju Koko -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produkunggulan/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Baju Koko</h3>
-                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Product 3 - Jubah -->
+            <!-- Product 3 - Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produkunggulan/juba-2.jpeg" alt="Jubah" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/gamis-2.jpeg" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
-                    <a href="/products?category=jubah" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -224,7 +224,7 @@
 
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Artikel 1 -->
-            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-48 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Artikel 1" class="w-full h-full object-cover">
                     <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Tips</span>
@@ -234,9 +234,9 @@
                         <i class="far fa-calendar-alt"></i>
                         <span>1 Februari 2026</span>
                     </div>
-                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Cara Memilih Kopyah yang Nyaman untuk Sholat</h3>
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Cara Membedakan Songkok President asli dan palsu</h3>
                     <p class="text-gray-600 text-sm mb-4 leading-relaxed">Panduan lengkap memilih kopyah berkualitas yang nyaman digunakan untuk ibadah sehari-hari dan acara formal.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/articles/cara-memilih-kopyah" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -255,7 +255,7 @@
                     </div>
                     <h3 class="font-bold text-primary-dark mb-3 leading-snug">Tren Gamis Modern 2026 yang Tetap Syar'i</h3>
                     <p class="text-gray-600 text-sm mb-4 leading-relaxed">Eksplorasi desain gamis terbaru yang menggabungkan gaya modern dengan tetap menjaga nilai-nilai syar'i.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
+                   <a href="/articles/tren-gamis-modern" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -274,7 +274,7 @@
                     </div>
                     <h3 class="font-bold text-primary-dark mb-3 leading-snug">PT Assabar Sukses Berkah Raih Penghargaan UMKM</h3>
                     <p class="text-gray-600 text-sm mb-4 leading-relaxed">Pencapaian terbaru perusahaan dalam mengembangkan produk fashion muslim berkualitas di Indonesia.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
+                   <a href="/articles/penghargaan-umkm" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>

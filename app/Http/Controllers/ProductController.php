@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -13,15 +12,9 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Product::query();
-        
-        if ($request->has('category') && $request->category != 'all') {
-            $query->where('kategori', $request->category);
-        }
-        
-        $products = $query->orderBy('tanggal_dibuat', 'desc')->get();
+        $products = Product::orderBy('tanggal_dibuat', 'desc')->get();
         $categories = Product::select('kategori')->distinct()->pluck('kategori');
-        
+
         return view('products', compact('products', 'categories'));
     }
 

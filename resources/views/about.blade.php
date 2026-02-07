@@ -61,7 +61,7 @@
             <!-- Songkok -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/songkok.png" alt="Songkok" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/songkok.jpeg" alt="Songkok" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary-dark mb-2">Songkok</h3>
@@ -74,7 +74,7 @@
             <!-- Baju Koko -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
                 <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produkunggulan/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary-dark mb-2">Baju Koko</h3>
@@ -87,11 +87,11 @@
             <!-- Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
                 <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/gamis.png" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/gamis-1.png" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary-dark mb-2">Gamis</h3>
-                    <a href="/products?category=jubah" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products?category=gamis" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -100,7 +100,7 @@
             <!-- Peci -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="400">
                 <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/peci.png" alt="Peci" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/peci.jpeg " alt="Peci" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary-dark mb-2">Peci</h3>

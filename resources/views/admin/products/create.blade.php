@@ -34,7 +34,7 @@
                     <select name="kategori" id="kategori" 
                             class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl font-sans transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 hover:border-gray-300 cursor-pointer appearance-none bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] pr-10" required>
                         <option value="">Pilih Kategori</option>
-                        <option value="Jubah" {{ old('kategori') == 'Jubah' ? 'selected' : '' }}>Jubah</option>
+                        <option value="Gamis" {{ old('kategori') == 'Gamis' ? 'selected' : '' }}>Gamis</option>
                         <option value="Baju Koko" {{ old('kategori') == 'Baju Koko' ? 'selected' : '' }}>Baju Koko</option>
                         <option value="Songkok" {{ old('kategori') == 'Songkok' ? 'selected' : '' }}>Songkok</option>
                         <option value="Peci" {{ old('kategori') == 'Peci' ? 'selected' : '' }}>Peci</option>

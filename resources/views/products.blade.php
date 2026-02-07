@@ -21,9 +21,9 @@
                 <i class="fas fa-th-large"></i>
                 Semua Produk
             </button>
-            <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="jubah">
+            <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="gamis">
                 <i class="fas fa-vest"></i>
-                Jubah
+                Gamis
             </button>
             <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="koko">
                 <i class="fas fa-tshirt"></i>
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cat = cat.toLowerCase().trim();
         // Map common variations
         if (cat === 'baju koko' || cat === 'bajukoko') return 'koko';
+        if (cat === 'jubah') return 'gamis';
         return cat;
     }
 

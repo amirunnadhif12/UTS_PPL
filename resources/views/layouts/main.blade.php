@@ -102,8 +102,7 @@
                     <h4 class="text-white text-lg font-semibold mb-6 relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Marketplace</h4>
                     <ul class="list-none space-y-3">
                         <li><a href="https://shopee.co.id/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-bag"></i> Shopee</a></li>
-                        <li><a href="https://tokopedia.com/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>
-                        <li><a href="https://bukalapak.com/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-cart"></i> Bukalapak</a></li>
+                        <li><a href="https://tokopedia.com/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>         
                         <li><a href="https://lazada.co.id/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-basket"></i> Lazada</a></li>
                     </ul>
                 </div>
