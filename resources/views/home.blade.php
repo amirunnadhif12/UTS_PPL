@@ -222,21 +222,21 @@
             </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <!-- Artikel 1 -->
-            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300ease-out" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Artikel 1" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Tips</span>
+                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Dinamika Zaman As-Sabar" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Fashion</span>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
                         <i class="far fa-calendar-alt"></i>
-                        <span>1 Februari 2026</span>
+                        <span>5 Februari 2026</span>
                     </div>
-                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Cara Membedakan Songkok President asli dan palsu</h3>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Panduan lengkap memilih kopyah berkualitas yang nyaman digunakan untuk ibadah sehari-hari dan acara formal.</p>
-                    <a href="/articles/cara-memilih-kopyah" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Menghadapi Dinamika Zaman dengan Keteguhan Gaya dan Iman bersama As-Sabar</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Bagaimana As-Sabar menjawab kebutuhan pria muslim modern yang ingin tampil aktual tanpa mengorbankan nilai tradisi dan syariat.</p>
+                    <a href="/articles/dinamika-zaman-assabar" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -245,36 +245,17 @@
             <!-- Artikel 2 -->
             <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Artikel 2" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-secondary text-primary-dark px-3 py-1 rounded-full text-xs font-semibold">Fashion</span>
+                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Ramadhan As-Sabar" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 bg-secondary text-primary-dark px-3 py-1 rounded-full text-xs font-semibold">Spiritual</span>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
                         <i class="far fa-calendar-alt"></i>
-                        <span>28 Januari 2026</span>
+                        <span>1 Februari 2026</span>
                     </div>
-                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Tren Gamis Modern 2026 yang Tetap Syar'i</h3>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Eksplorasi desain gamis terbaru yang menggabungkan gaya modern dengan tetap menjaga nilai-nilai syar'i.</p>
-                   <a href="/articles/tren-gamis-modern" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
-                        Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Artikel 3 -->
-            <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="300">
-                <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=250&fit=crop" alt="Artikel 3" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-dark text-white px-3 py-1 rounded-full text-xs font-semibold">Perusahaan</span>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>20 Januari 2026</span>
-                    </div>
-                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">PT Assabar Sukses Berkah Raih Penghargaan UMKM</h3>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Pencapaian terbaru perusahaan dalam mengembangkan produk fashion muslim berkualitas di Indonesia.</p>
-                   <a href="/articles/penghargaan-umkm" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <h3 class="font-bold text-primary-dark mb-3 leading-snug">Menyambut Ramadhan dengan Syukur & Kesabaran</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Refleksi spiritual tentang makna sabar dan syukur dalam Al-Qur'an serta koleksi spesial Ramadhan dari As-Sabar.</p>
+                    <a href="/articles/ramadhan-syukur-sabar" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
