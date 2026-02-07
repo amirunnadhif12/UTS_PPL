@@ -8,7 +8,7 @@
     <div class="absolute inset-0 z-0">
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500 active" style="background-image: url('/images/hero/hero-1.jpg');"></div>
         <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500" style="background-image: url('/images/hero/hero-2.jpg');"></div>
-        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500" style="background-image: url('/images/hero/hero-3.jpg');"></div>
+        <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1500" style="background-image: url('/images/hero/hero-3.jpeg');"></div>
     </div>
     
     <!-- Overlay -->
@@ -21,8 +21,8 @@
     <div class="text-center text-white z-10 px-8 max-w-4xl" data-aos="fade-up">
         <span class="inline-block bg-secondary/20 border border-secondary/40 text-secondary px-6 py-2 rounded-full text-3xl font-medium tracking-wider mb-6 font-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
         <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-            Muslim Fashion
-            <span class="text-secondary block">Excellence</span>
+            AS-SABAR
+            <span class="text-secondary block">Moeslem Wear</span>
         </h1>
         <p class="text-xl opacity-90 mb-10 leading-relaxed">
             Produsen terpercaya footwear muslim, kopyah premium, dan baju gamis berkualitas tinggi. 
@@ -137,7 +137,7 @@
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
-                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products?category=gamis" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Baju Koko</h3>
-                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
-                    <a href="/products" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <a href="/products?category=gamis" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -195,8 +195,8 @@
                 <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <div class="text-5xl font-extrabold text-secondary mb-2">34</div>
-                <div class="opacity-80">Provinsi Terjangkau</div>
+                <div class="text-5xl font-extrabold text-secondary mb-2"><i class="fas fa-check-circle"></i></div>
+                <div class="opacity-80">Terjangkau di Seluruh Indonesia</div>
             </div>
             <div class="text-white" data-aos="fade-up" data-aos-delay="400">
                 <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">

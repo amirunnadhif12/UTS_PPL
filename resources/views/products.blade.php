@@ -3,9 +3,23 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="min-h-[50vh] bg-cover bg-bottom flex items-center justify-center relative overflow-hidden" style="background-image: url('/images/hero/hero-2.jpg');">
+<section class="min-h-[35vh] flex items-center justify-center relative overflow-hidden">
+    <!-- Slideshow Background -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="product-slide-track flex h-full transition-transform duration-700 ease-in-out" style="width: 300%;">
+            <div style="width: 33.333%;" class="h-full shrink-0">
+                <img src="/images/hero/image-1.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <div style="width: 33.333%;" class="h-full shrink-0">
+                <img src="/images/hero/image-2.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <div style="width: 33.333%;" class="h-full shrink-0">
+                <img src="/images/hero/image-3.png" alt="" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-dark/85 z-1"></div>
-    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'80\' height=\'80\' viewBox=\'0 0 80 80\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'0.06\'%3E%3Cpath d=\'M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    <div class="absolute inset-0 opacity-5 pointer-events-none z-[2]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'80\' height=\'80\' viewBox=\'0 0 80 80\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'0.06\'%3E%3Cpath d=\'M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     <div class="relative z-10 text-center text-white py-12 px-8" data-aos="fade-up">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Katalog <span class="text-secondary">Produk</span></h1>
         <p class="text-lg opacity-90 max-w-2xl mx-auto">Koleksi busana muslim berkualitas tinggi dengan sentuhan elegan dan modern untuk menemani ibadah Anda</p>
@@ -44,15 +58,17 @@
             @forelse($products as $index => $product)
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-400 relative" data-category="{{ strtolower($product->kategori) }}" data-aos="fade-up" data-aos-delay="{{ ($index % 6 + 1) * 50 }}">
                 <div class="relative h-80 overflow-hidden group">
+                    <a href="{{ route('products.show', $product->id) }}" class="block w-full h-full cursor-pointer">
                     @if($product->gambar1)
                         <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     @else
                         <img src="https://via.placeholder.com/500x400?text=No+Image" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     @endif
+                    </a>
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-center gap-3 translate-y-full transition-transform duration-400 group-hover:translate-y-0">
                         <a href="{{ route('products.show', $product->id) }}" class="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 hover:bg-secondary hover:text-dark hover:scale-110" title="Lihat Detail"><i class="fas fa-eye"></i></a>
-                        <button class="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 hover:bg-secondary hover:text-dark hover:scale-110" title="Tambah ke Wishlist"><i class="fas fa-heart"></i></button>
-                        <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}" target="_blank" class="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 hover:bg-secondary hover:text-dark hover:scale-110" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></a>
+                        <button onclick="if(navigator.share){navigator.share({title:'{{ $product->nama_produk }}',url:'{{ route('products.show', $product->id) }}'})}else{navigator.clipboard.writeText('{{ route('products.show', $product->id) }}');alert('Link berhasil disalin!')}" class="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 hover:bg-secondary hover:text-dark hover:scale-110" title="Share Produk"><i class="fas fa-share-alt"></i></button>
+                        <a href="https://wa.me/6285748169363?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}" target="_blank" class="w-11 h-11 rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 hover:bg-secondary hover:text-dark hover:scale-110" title="Hubungi Kami"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="p-6">
@@ -141,6 +157,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Product Header Slideshow (horizontal slide)
+    const slideTrack = document.querySelector('.product-slide-track');
+    let currentProductSlide = 0;
+    const totalSlides = 3;
+    function nextProductSlide() {
+        currentProductSlide = (currentProductSlide + 1) % totalSlides;
+        slideTrack.style.transform = 'translateX(-' + (currentProductSlide * (100 / totalSlides)) + '%)';
+    }
+    if (slideTrack) {
+        setInterval(nextProductSlide, 5000);
+    }
 });
 </script>
 @endpush
@@ -150,7 +178,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .filter-btn.active {
         background-color: var(--color-primary) !important;
         color: white !important;
-        box-shadow: 0 5px 20px rgba(26, 86, 50, 0.3);
+        box-shadow: 0 5px 20px rgba(14, 124, 140, 0.3);
+    }
+    .product-slide-track {
+        will-change: transform;
     }
 </style>
 @endpush

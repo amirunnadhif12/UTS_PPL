@@ -3,7 +3,7 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="min-h-[50vh] bg-cover bg-left flex items-center justify-center relative overflow-hidden" style="background-image: url('/images/hero/hero-1.jpg');">
+<section class="min-h-[50vh] bg-cover bg-left flex items-center justify-center relative overflow-hidden" style="background-image: url('/images/hero/hero-3.jpeg');">
     <div class="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-dark/85 z-1"></div>
     <div class="relative z-10 text-center text-white py-24 px-8">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg" data-aos="fade-up">Tentang Kami</h1>
@@ -16,7 +16,7 @@
     <div class="max-w-6xl mx-auto px-8">
         <div class="grid md:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="Tentang Perusahaan" class="w-full rounded-2xl shadow-xl">
+                <img src="/images/logo/logo%20lengkap.jpeg" alt="Tentang Perusahaan" class="w-full rounded-2xl shadow-xl">
             </div>
             <div data-aos="fade-left">
                 <h2 class="text-4xl font-bold text-primary-dark mb-6">Tentang Perusahaan</h2>

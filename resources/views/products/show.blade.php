@@ -64,28 +64,29 @@
 
                     <!-- Marketplace Icons -->
                     <div class="p-6 bg-gradient-to-br from-cream to-white rounded-2xl border border-gray-100">
-                        <h4 class="font-bold text-dark mb-4 flex items-center gap-2">
-                            <i class="fas fa-shopping-bag text-primary"></i>
-                            Beli di Marketplace
-                        </h4>
+                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Tersedia disini</h3>
                         <div class="flex flex-wrap gap-4">
                             <!-- Shopee -->
-                            <a href="https://shopee.co.id/assabarcollection" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-orange-500 p-2" title="Shopee">
+                            <a href="https://shopee.co.id/as_sabarofficialshop" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-orange-500 p-2" title="Shopee">
                                 <img src="/images/logo/logo shoope.png" alt="Shopee" class="w-full h-full object-contain">
                             </a>
                             <!-- Tokopedia -->
-                            <a href="https://tokopedia.com/assabarcollection" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-green-500 p-2" title="Tokopedia">
+                            <a href="https://www.tokopedia.com/as-sabar-moslem-wear" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-green-500 p-2" title="Tokopedia">
                                 <img src="/images/logo/logo tokopedia.png" alt="Tokopedia" class="w-full h-full object-contain">
                             </a>
                             <!-- Lazada -->
-                            <a href="https://lazada.co.id/shop/assabarcollection" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-blue-600 p-2" title="Lazada">
+                            <a href="https://www.lazada.co.id/as-sabar" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-blue-600 p-2" title="Lazada">
                                 <img src="/images/logo/logo lazada.png" alt="Lazada" class="w-full h-full object-contain">
+                            </a>
+                            <!-- TikTok -->
+                            <a href="https://www.tiktok.com/@assabarmoslemwear" target="_blank" class="w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-black p-2" title="TikTok">
+                                <img src="/images/logo/logo tiktok.png" alt="TikTok" class="w-full h-full object-contain">
                             </a>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-4 pt-6 border-t-2 border-gray-100">
-                        <a href="https://wa.me/6281246221344?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}. Apakah masih tersedia?" target="_blank" class="inline-flex items-center gap-3 py-4 px-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/50">
+                        <a href="https://wa.me/6285748169363?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}. Apakah masih tersedia?" target="_blank" class="inline-flex items-center gap-3 py-4 px-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/50">
                             <i class="fab fa-whatsapp text-xl"></i>
                             Hubungi via WhatsApp
                         </a>

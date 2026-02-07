@@ -6,9 +6,9 @@
     <title>@yield('title', 'PT Assabar Sukses Berkah')</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo asli.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo/logo asli.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo asli.png') }}">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
                 </div>
                 <div>
                     <h1 class="text-white text-xl font-bold drop-shadow-md">PT Assabar Sukses Berkah</h1>
-                    <p class="text-secondary text-xs font-medium">Muslim Fashion Excellence</p>
+                    <p class="text-secondary text-xs font-medium">Moeslem Wear</p>
                 </div>
             </a>
             
@@ -79,10 +79,10 @@
                     <h3 class="text-2xl text-secondary font-bold mb-4">PT Assabar Sukses Berkah</h3>
                     <p class="text-white/70 leading-relaxed mb-6">Produsen terpercaya produk fashion muslim berkualitas tinggi. Kami berkomitmen menghadirkan produk terbaik dengan sentuhan islami yang elegan.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/assabarcollection/" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6281246221344" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-whatsapp"></i></a>
-                    
+                        <a href="https://web.facebook.com/gamisassabar" target="_blank" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/assabarcollection/" target="_blank" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@assabarmoslemwear" target="_blank" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/6285748169363" class="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center text-white no-underline transition-all duration-300 hover:bg-secondary hover:text-primary-dark hover:-translate-y-1"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -101,9 +101,9 @@
                 <div>
                     <h4 class="text-white text-lg font-semibold mb-6 relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Marketplace</h4>
                     <ul class="list-none space-y-3">
-                        <li><a href="https://shopee.co.id/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-bag"></i> Shopee</a></li>
-                        <li><a href="https://tokopedia.com/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>         
-                        <li><a href="https://lazada.co.id/toko-assabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-basket"></i> Lazada</a></li>
+                        <li><a href="https://shopee.co.id/as_sabarofficialshop" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-bag"></i> Shopee</a></li>
+                        <li><a href="https://www.tokopedia.com/as-sabar-moslem-wear" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>         
+                        <li><a href="https://www.lazada.co.id/as-sabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-basket"></i> Lazada</a></li>
                     </ul>
                 </div>
 
