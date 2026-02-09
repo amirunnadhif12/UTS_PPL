@@ -44,20 +44,20 @@ class ProductController extends Controller
             'nama_produk' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar' => 'nullable|array|max:5',
+            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
 
-        // Handle image uploads
-        for ($i = 1; $i <= 5; $i++) {
-            $field = 'gambar' . $i;
-            if ($request->hasFile($field)) {
-                $data[$field] = $request->file($field)->store('products', 'public');
+        // Handle multiple image uploads
+        if ($request->hasFile('gambar')) {
+            $images = $request->file('gambar');
+            $imageCount = min(count($images), 5); // Maksimal 5 gambar
+            
+            for ($i = 0; $i < $imageCount; $i++) {
+                $field = 'gambar' . ($i + 1);
+                $data[$field] = $images[$i]->store('products', 'public');
             }
         }
 

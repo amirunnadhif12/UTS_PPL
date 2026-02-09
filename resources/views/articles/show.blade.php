@@ -10,7 +10,7 @@ $articles = [
         'category_color' => 'bg-primary',
         'date' => '5 Februari 2026',
         'author' => 'Admin',
-        'image' => 'https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&h=400&fit=crop',
+        'image' => 'images/article/art1.jpeg',
         'content' => '
             <p class="mb-6">Di era modern yang serba cepat ini, pria muslim seringkali dihadapkan pada tantangan untuk tetap tampil aktual dan relevan tanpa harus mengorbankan nilai-nilai tradisi dan syariat. Perubahan tren fashion yang sangat dinamis menuntut produk yang tidak hanya sekadar mengikuti zaman, tetapi juga memiliki karakter yang kuat, sederhana, dan elegan. Dalam kondisi inilah, PT Assabar Sukses Berkah hadir melalui lini produk unggulannya untuk memberikan jawaban atas kebutuhan busana muslim yang berkualitas tinggi.</p>
 
@@ -34,7 +34,7 @@ $articles = [
         'category_color' => 'bg-secondary text-primary-dark',
         'date' => '1 Februari 2026',
         'author' => 'Admin',
-        'image' => 'https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=800&h=400&fit=crop',
+        'image' => 'images/article/art2.jpeg',
         'content' => '
             <p class="mb-6">Bulan Ramadhan telah tiba kembali—bulan yang dinantikan oleh seluruh umat Islam di penjuru dunia. Bulan yang di dalamnya terkumpul berbagai keutamaan: ibadah dilipatgandakan pahalanya, pintu ampunan dibuka selebar-lebarnya, dan keberkahan turun membasahi setiap hati yang tulus. Bagi kami di As-Sabar, Ramadhan bukan sekadar momentum ritual tahunan, melainkan <em>madrasah ruhaniyah</em>—sekolah spiritual yang mengajarkan dua nilai utama: syukur dan sabar, yang juga menjadi fondasi filosofi brand kami.</p>
 
@@ -105,10 +105,6 @@ $article = $articles[$slug] ?? null;
     <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
         <span class="inline-block {{ $article['category_color'] }} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">{{ $article['category'] }}</span>
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" data-aos="fade-up" data-aos-delay="100">{{ $article['title'] }}</h1>
-        <div class="flex items-center justify-center gap-6 text-white/70 mt-6" data-aos="fade-up" data-aos-delay="200">
-            <span class="flex items-center gap-2"><i class="far fa-calendar-alt"></i> {{ $article['date'] }}</span>
-            <span class="flex items-center gap-2"><i class="far fa-user"></i> {{ $article['author'] }}</span>
-        </div>
     </div>
 </section>
 
@@ -117,7 +113,7 @@ $article = $articles[$slug] ?? null;
     <div class="max-w-4xl mx-auto px-8">
         <!-- Featured Image -->
         <div class="rounded-2xl overflow-hidden shadow-xl mb-12 -mt-20 relative z-20" data-aos="fade-up">
-            <img src="{{ $article['image'] }}" alt="{{ $article['title'] }}" class="w-full h-90 object-cover">
+            <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="w-full h-90 object-cover">
         </div>
 
         <!-- Content -->

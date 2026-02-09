@@ -3,10 +3,10 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="min-h-[35vh] flex items-center justify-center relative overflow-hidden">
+<section class="min-h-[50vh] flex items-center justify-center relative overflow-hidden">
     <!-- Slideshow Background -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="product-slide-track flex h-full transition-transform duration-700 ease-in-out" style="width: 300%;">
+        <div class="product-slide-track flex h-full transition-transform duration-700 ease-in-out" style="width: 500%;">
             <div style="width: 33.333%;" class="h-full shrink-0">
                 <img src="/images/hero/image-1.png" alt="" class="w-full h-full object-cover">
             </div>
@@ -36,19 +36,15 @@
                 Semua Produk
             </button>
             <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="gamis">
-                <i class="fas fa-vest"></i>
                 Gamis
             </button>
             <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="koko">
-                <i class="fas fa-tshirt"></i>
                 Baju Koko
             </button>
             <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="songkok">
-                <i class="fas fa-hat-wizard"></i>
                 Songkok
             </button>
             <button class="filter-btn px-8 py-3 border-2 border-primary bg-transparent text-primary font-medium rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-0.5" data-filter="peci">
-                <i class="fas fa-hat-cowboy"></i>
                 Peci
             </button>
         </div>
@@ -131,8 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.display = 'none';
             }
         });
-
-        console.log('Filter applied:', filter, 'Visible products:', visibleCount);
     }
 
     // Check URL parameter on page load

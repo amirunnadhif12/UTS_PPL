@@ -18,22 +18,22 @@
     <div class="absolute -top-24 -right-24 w-96 h-96 border-2 border-secondary/20 rounded-full pointer-events-none animate-spin-slow"></div>
     <div class="absolute -bottom-36 -left-36 w-[500px] h-[500px] border-2 border-secondary/20 rounded-full pointer-events-none animate-spin-slow-reverse"></div>
     
-    <div class="text-center text-white z-10 px-8 max-w-4xl" data-aos="fade-up">
-        <span class="inline-block bg-secondary/20 border border-secondary/40 text-secondary px-6 py-2 rounded-full text-3xl font-medium tracking-wider mb-6 font-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+    <div class="text-center text-white z-10 px-4 sm:px-8 max-w-4xl" data-aos="fade-up">
+        <span class="inline-block bg-secondary/20 border border-secondary/40 text-secondary px-4 sm:px-6 py-2 rounded-full text-xl sm:text-2xl md:text-3xl font-medium tracking-wider mb-4 sm:mb-6 font-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 drop-shadow-lg">
             AS-SABAR
-            <span class="text-secondary block">Moeslem Wear</span>
+            <span class="text-secondary block">Moslem Wear</span>
         </h1>
-        <p class="text-xl opacity-90 mb-10 leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl opacity-90 mb-6 sm:mb-10 leading-relaxed px-2">
             Produsen terpercaya footwear muslim, kopyah premium, dan baju gamis berkualitas tinggi. 
             Menghadirkan produk dengan sentuhan islami yang elegan untuk keluarga muslim Indonesia.
         </p>
-        <div class="flex gap-4 justify-center flex-wrap">
-            <a href="/products" class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
+        <div class="flex gap-3 sm:gap-4 justify-center flex-wrap">
+            <a href="/products" class="btn-primary-custom inline-flex items-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300">
                 <i class="fas fa-shopping-bag"></i>
                 Lihat Produk
             </a>
-            <a href="/about" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 border-white text-white transition-all duration-300 hover:bg-white hover:text-primary-dark">
+            <a href="/about" class="inline-flex items-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base border-2 border-white text-white transition-all duration-300 hover:bg-white hover:text-primary-dark">
                 <i class="fas fa-info-circle"></i>
                 Tentang Kami
             </a>
@@ -47,9 +47,9 @@
 </section>
 
 <!-- About Section -->
-<section class="py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="grid md:grid-cols-2 gap-20 items-center">
+<section class="py-16 sm:py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
             <div class="relative" data-aos="fade-right">
                 <img src="{{ asset('images/hero/3.png') }}" alt="About Us" class="w-full rounded-2xl shadow-2xl">
                 <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-gold-gradient rounded-2xl -z-10"></div>
@@ -117,19 +117,19 @@
 </section>
 
 <!-- Products Section -->
-<section class="py-32 bg-cream">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
+<section class="py-16 sm:py-24 md:py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
             <span class="text-secondary font-semibold text-sm uppercase tracking-widest block mb-3">Produk Kami</span>
-            <h2 class="text-4xl font-bold text-primary-dark mb-4">Produk Unggulan</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-dark mb-4">Produk Unggulan</h2>
             <div class="flex items-center justify-center gap-4">
-                <span class="w-16 h-0.5 bg-secondary"></span>
-                <i class="fas fa-star text-secondary text-2xl"></i>
-                <span class="w-16 h-0.5 bg-secondary"></span>
+                <span class="w-12 sm:w-16 h-0.5 bg-secondary"></span>
+                <i class="fas fa-star text-secondary text-xl sm:text-2xl"></i>
+                <span class="w-12 sm:w-16 h-0.5 bg-secondary"></span>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             <!-- Product 1 - Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
@@ -156,14 +156,14 @@
                 </div>
             </div>
 
-            <!-- Product 3 - Gamis -->
+            <!-- Product 3 - Songkok -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/gamis-2.jpeg" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/songkok1.jpeg" alt="Songkok" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-8">
-                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Gamis</h3>
-                    <a href="/products?category=gamis" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Songkok</h3>
+                    <a href="/products?category=songkok" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
                         Lihat Produk <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -173,37 +173,37 @@
 </section>
 
 <!-- Stats Section -->
-<section class="py-24 bg-islamic-gradient relative overflow-hidden">
+<section class="py-16 sm:py-20 md:py-24 bg-islamic-gradient relative overflow-hidden">
     <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%23d4af37\'/%3E%3C/svg%3E');"></div>
-    <div class="max-w-7xl mx-auto px-8 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-center">
             <div class="text-white" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
+                <div class="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 text-secondary text-lg sm:text-xl md:text-2xl">
                     <i class="fas fa-users"></i>
                 </div>
-                <div class="text-5xl font-extrabold text-secondary mb-2">5000+</div>
-                <div class="opacity-80">Pelanggan Puas</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2">5000+</div>
+                <div class="opacity-80 text-xs sm:text-sm md:text-base">Pelanggan Puas</div>
             </div>
             <div class="text-white" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
+                <div class="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 text-secondary text-lg sm:text-xl md:text-2xl">
                     <i class="fas fa-box"></i>
                 </div>
-                <div class="text-5xl font-extrabold text-secondary mb-2">100+</div>
-                <div class="opacity-80">Jenis Produk</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2">100+</div>
+                <div class="opacity-80 text-xs sm:text-sm md:text-base">Jenis Produk</div>
             </div>
             <div class="text-white" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
+                <div class="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 text-secondary text-lg sm:text-xl md:text-2xl">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <div class="text-5xl font-extrabold text-secondary mb-2"><i class="fas fa-check-circle"></i></div>
-                <div class="opacity-80">Terjangkau di Seluruh Indonesia</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2"><i class="fas fa-check-circle"></i></div>
+                <div class="opacity-80 text-xs sm:text-sm md:text-base">Seluruh Indonesia</div>
             </div>
             <div class="text-white" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary text-2xl">
+                <div class="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 text-secondary text-lg sm:text-xl md:text-2xl">
                     <i class="fas fa-star"></i>
                 </div>
-                <div class="text-5xl font-extrabold text-secondary mb-2">4.9</div>
-                <div class="opacity-80">Rating Pelanggan</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2">4.9</div>
+                <div class="opacity-80 text-xs sm:text-sm md:text-base">Rating Pelanggan</div>
             </div>
         </div>
     </div>
@@ -226,7 +226,7 @@
             <!-- Artikel 1 -->
             <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=250&fit=crop" alt="Dinamika Zaman As-Sabar" class="w-full h-full object-cover">
+                    <img src="images/article/art1.jpeg" alt="Dinamika Zaman As-Sabar" class="w-full h-full object-cover">
                     <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Fashion</span>
                 </div>
                 <div class="p-6">
@@ -245,7 +245,7 @@
             <!-- Artikel 2 -->
             <div class="bg-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=400&h=250&fit=crop" alt="Ramadhan As-Sabar" class="w-full h-full object-cover">
+                    <img src="images/article/art2.jpeg" alt="Ramadhan As-Sabar" class="w-full h-full object-cover">
                     <span class="absolute top-4 left-4 bg-secondary text-primary-dark px-3 py-1 rounded-full text-xs font-semibold">Spiritual</span>
                 </div>
                 <div class="p-6">

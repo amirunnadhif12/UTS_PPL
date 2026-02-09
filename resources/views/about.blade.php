@@ -142,6 +142,19 @@
         </div>
 
         <div class="grid md:grid-cols-4 gap-6">
+
+          <!-- Baju Koko -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
+                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-primary-dark mb-2">Baju Koko</h3>
+                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                        Lihat Produk <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
             <!-- Songkok -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
@@ -155,18 +168,7 @@
                 </div>
             </div>
 
-            <!-- Baju Koko -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
-                <div class="h-64 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary-dark mb-2">Baju Koko</h3>
-                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
-                        Lihat Produk <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+          
 
             <!-- Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
