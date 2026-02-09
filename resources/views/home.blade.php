@@ -54,7 +54,7 @@
                 <img src="{{ asset('images/hero/3.png') }}" alt="About Us" class="w-full rounded-2xl shadow-2xl">
                 <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-gold-gradient rounded-2xl -z-10"></div>
                 <div class="absolute bottom-8 -left-8 bg-primary text-white p-8 rounded-2xl text-center shadow-xl">
-                    <h3 class="text-5xl font-extrabold text-secondary leading-none">10+</h3>
+                    <h3 class="text-5xl font-extrabold text-secondary leading-none">5+</h3>
                     <p class="text-sm mt-2">Tahun Pengalaman</p>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                 <div class="w-12 h-12 sm:w-14 md:w-16 sm:h-14 md:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 text-secondary text-lg sm:text-xl md:text-2xl">
                     <i class="fas fa-users"></i>
                 </div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2">5000+</div>
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary mb-1 sm:mb-2">10000+</div>
                 <div class="opacity-80 text-xs sm:text-sm md:text-base">Pelanggan Puas</div>
             </div>
             <div class="text-white" data-aos="fade-up" data-aos-delay="200">
@@ -230,10 +230,7 @@
                     <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Fashion</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>5 Februari 2026</span>
-                    </div>
+                   
                     <h3 class="font-bold text-primary-dark mb-3 leading-snug">Menghadapi Dinamika Zaman dengan Keteguhan Gaya dan Iman bersama As-Sabar</h3>
                     <p class="text-gray-600 text-sm mb-4 leading-relaxed">Bagaimana As-Sabar menjawab kebutuhan pria muslim modern yang ingin tampil aktual tanpa mengorbankan nilai tradisi dan syariat.</p>
                     <a href="/articles/dinamika-zaman-assabar" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">
@@ -249,10 +246,7 @@
                     <span class="absolute top-4 left-4 bg-secondary text-primary-dark px-3 py-1 rounded-full text-xs font-semibold">Spiritual</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex items-center gap-2 text-gray-500 text-sm mb-3">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>1 Februari 2026</span>
-                    </div>
+                   
                     <h3 class="font-bold text-primary-dark mb-3 leading-snug">Menyambut Ramadhan dengan Syukur & Kesabaran</h3>
                     <p class="text-gray-600 text-sm mb-4 leading-relaxed">Refleksi spiritual tentang makna sabar dan syukur dalam Al-Qur'an serta koleksi spesial Ramadhan dari As-Sabar.</p>
                     <a href="/articles/ramadhan-syukur-sabar" class="inline-flex items-center gap-2 text-primary font-semibold text-sm transition-all duration-300 hover:text-secondary hover:gap-3">

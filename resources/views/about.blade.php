@@ -32,11 +32,11 @@
 
                 <div class="grid grid-cols-3 gap-6">
                     <div class="text-center p-6 bg-cream rounded-xl">
-                        <h3 class="text-3xl font-bold text-primary mb-1">10+</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">5+</h3>
                         <p class="text-gray-500 text-sm">Tahun Pengalaman</p>
                     </div>
                     <div class="text-center p-6 bg-cream rounded-xl">
-                        <h3 class="text-3xl font-bold text-primary mb-1">5000+</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">10000+</h3>
                         <p class="text-gray-500 text-sm">Pelanggan</p>
                     </div>
                     <div class="text-center p-6 bg-cream rounded-xl">

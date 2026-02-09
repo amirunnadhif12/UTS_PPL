@@ -96,24 +96,24 @@ class ProductController extends Controller
             'nama_produk' => 'required|string|max:255',
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar2' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar3' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar4' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'gambar5' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
+            'gambar' => 'nullable|array|max:5',
+            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
 
-        // Handle image uploads
-        for ($i = 1; $i <= 5; $i++) {
-            $field = 'gambar' . $i;
-            if ($request->hasFile($field)) {
-                // Delete old image if exists
-                if ($product->$field) {
-                    Storage::disk('public')->delete($product->$field);
+        // Handle multiple new image uploads - fill empty slots
+        if ($request->hasFile('gambar')) {
+            $images = $request->file('gambar');
+            $imageIndex = 0;
+            
+            // Find empty slots and fill them with new images
+            for ($i = 1; $i <= 5 && $imageIndex < count($images); $i++) {
+                $field = 'gambar' . $i;
+                if (!$product->$field) {
+                    $data[$field] = $images[$imageIndex]->store('products', 'public');
+                    $imageIndex++;
                 }
-                $data[$field] = $request->file($field)->store('products', 'public');
             }
         }
 
@@ -149,6 +149,10 @@ class ProductController extends Controller
      */
     public function deleteImage(string $id, string $imageField)
     {
+        if (!in_array($imageField, ['gambar1', 'gambar2', 'gambar3', 'gambar4', 'gambar5'])) {
+            abort(403, 'Field tidak diizinkan.');
+        }
+
         $product = Product::findOrFail($id);
         
         if ($product->$imageField) {

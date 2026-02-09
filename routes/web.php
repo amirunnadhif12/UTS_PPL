@@ -9,7 +9,7 @@ Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/contact', fn() => view('contact'))->name('contact');
-Route::get('/articles/{slug}', fn($slug) => view('articles.show', ['slug' => $slug]))->name('articles.show');
+Route::get('/articles/{slug}', fn($slug) => view('articles.show', ['slug' => $slug]))->where('slug', '[a-zA-Z0-9\-]+')->name('articles.show');
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {

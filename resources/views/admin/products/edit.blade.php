@@ -64,11 +64,12 @@
             <!-- Current Images -->
             @php
                 $hasImages = false;
+                $existingImageCount = 0;
                 for ($i = 1; $i <= 5; $i++) {
                     $field = 'gambar' . $i;
                     if ($product->$field) {
                         $hasImages = true;
-                        break;
+                        $existingImageCount++;
                     }
                 }
             @endphp
@@ -97,22 +98,34 @@
             </div>
             @endif
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                @for($i = 1; $i <= 5; $i++)
-                @php $field = 'gambar' . $i; @endphp
+            <div class="grid grid-cols-1 gap-4">
                 <div>
-                    <label class="block mb-2 font-medium text-dark text-sm" for="gambar{{ $i }}">
-                        {{ $product->$field ? 'Ganti' : 'Upload' }} Gambar {{ $i }}
-                    </label>
-                    <input type="file" name="gambar{{ $i }}" id="gambar{{ $i }}" 
-                           class="w-full py-2 px-3 border-2 border-gray-200 rounded-xl text-sm transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:bg-primary/10 file:text-primary file:font-medium file:cursor-pointer" 
-                           accept="image/*" onchange="previewImage(this, 'preview{{ $i }}')">
-                    <div id="preview{{ $i }}" class="mt-2"></div>
-                    @error('gambar' . $i)
+                    <label class="block mb-2 font-medium text-dark text-sm">Tambah Gambar Baru (Maksimal {{ 5 - $existingImageCount }} lagi)</label>
+                    <div id="dropZone" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center transition-all duration-300 hover:border-primary hover:bg-primary/5 cursor-pointer">
+                        <input type="file" name="gambar[]" id="gambarInput" 
+                               class="hidden" 
+                               accept="image/*" multiple>
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-dark">Klik atau drag & drop gambar di sini</p>
+                                <p class="text-gray-500 text-sm mt-1">Format: JPG, PNG, GIF, WebP (Maksimal {{ 5 - $existingImageCount }} gambar)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="fileCount" class="text-sm text-gray-500 mt-2"></p>
+                    @error('gambar')
+                        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                    @enderror
+                    @error('gambar.*')
                         <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                     @enderror
                 </div>
-                @endfor
+                
+                <!-- Preview Container for New Images -->
+                <div id="previewContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-4"></div>
             </div>
 
             <div class="mt-10 pt-6 border-t-2 border-gray-100 flex gap-4">
@@ -130,19 +143,113 @@
 
 @push('scripts')
 <script>
-function previewImage(input, previewId) {
-    const preview = document.getElementById(previewId);
-    preview.innerHTML = '';
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('gambarInput');
+const previewContainer = document.getElementById('previewContainer');
+const fileCount = document.getElementById('fileCount');
+
+const maxNewImages = {{ 5 - $existingImageCount }};
+let selectedFiles = [];
+
+// Click to open file dialog
+dropZone.addEventListener('click', () => fileInput.click());
+
+// Drag and drop events
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('border-primary', 'bg-primary/10');
+});
+
+dropZone.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('border-primary', 'bg-primary/10');
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('border-primary', 'bg-primary/10');
     
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.className = 'w-24 h-24 object-cover rounded-xl border-2 border-gray-200';
-            preview.appendChild(img);
-        }
-        reader.readAsDataURL(input.files[0]);
+    const files = Array.from(e.dataTransfer.files).filter(file => file.type.startsWith('image/'));
+    handleFiles(files);
+});
+
+// File input change
+fileInput.addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    handleFiles(files);
+});
+
+function handleFiles(files) {
+    const remainingSlots = maxNewImages - selectedFiles.length;
+    
+    if (remainingSlots <= 0) {
+        alert('Tidak dapat menambah gambar lagi! Hapus gambar yang ada terlebih dahulu.');
+        return;
+    }
+    
+    const filesToAdd = files.slice(0, remainingSlots);
+    
+    if (files.length > remainingSlots) {
+        alert(`Hanya ${remainingSlots} gambar lagi yang dapat ditambahkan.`);
+    }
+    
+    filesToAdd.forEach(file => {
+        selectedFiles.push(file);
+        createPreview(file, selectedFiles.length - 1);
+    });
+    
+    updateFileInput();
+    updateFileCount();
+}
+
+function createPreview(file, index) {
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        const previewDiv = document.createElement('div');
+        previewDiv.className = 'relative group';
+        previewDiv.id = `preview-${index}`;
+        
+        previewDiv.innerHTML = `
+            <img src="${e.target.result}" class="w-full h-32 object-cover rounded-xl border-2 border-gray-200 group-hover:border-primary transition-colors">
+            <button type="button" onclick="removeImage(${index})" 
+                    class="absolute -top-2 -right-2 w-7 h-7 bg-red-500 text-white rounded-full flex items-center justify-center text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600">
+                <i class="fas fa-times"></i>
+            </button>
+            <p class="text-xs text-gray-500 mt-1 truncate">${file.name}</p>
+        `;
+        
+        previewContainer.appendChild(previewDiv);
+    }
+    
+    reader.readAsDataURL(file);
+}
+
+function removeImage(index) {
+    selectedFiles.splice(index, 1);
+    refreshPreviews();
+    updateFileInput();
+    updateFileCount();
+}
+
+function refreshPreviews() {
+    previewContainer.innerHTML = '';
+    selectedFiles.forEach((file, index) => {
+        createPreview(file, index);
+    });
+}
+
+function updateFileInput() {
+    const dataTransfer = new DataTransfer();
+    selectedFiles.forEach(file => dataTransfer.items.add(file));
+    fileInput.files = dataTransfer.files;
+}
+
+function updateFileCount() {
+    if (selectedFiles.length > 0) {
+        fileCount.innerHTML = `<span class="text-primary font-medium">${selectedFiles.length}</span> gambar baru dipilih`;
+    } else {
+        fileCount.innerHTML = '';
     }
 }
 

@@ -70,7 +70,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-primary-dark mb-1">Jam Operasional</h4>
-                            <p class="text-gray-600 text-sm">Senin - Sabtu: 08:00 - 17:00</p>
+                            <p class="text-gray-600 text-sm">Senin - Sabtu: 08:00 - 16:00</p>
                         </div>
                     </li>
                 </ul>

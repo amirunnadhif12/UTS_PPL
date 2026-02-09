@@ -73,7 +73,7 @@
     <!-- Footer -->
     <footer class="islamic-pattern bg-dark text-white pt-12 md:pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-8 md:pb-12 border-b border-white/10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-8 md:pb-12">
                 <!-- Brand -->
                 <div class="sm:col-span-2 lg:col-span-1">
                     <h3 class="text-xl md:text-2xl text-secondary font-bold mb-3 md:mb-4">PT Assabar Sukses Berkah</h3>
@@ -111,12 +111,18 @@
                 <div>
                     <h4 class="text-white text-lg font-semibold mb-6 relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Contact Info</h4>
                     <div class="space-y-4">
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-map-marker-alt text-secondary mt-1"></i> Jl. Industri Muslim No. 123, Jakarta, Indonesia</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-phone text-secondary mt-1"></i> +62 21 1234 5678</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-envelope text-secondary mt-1"></i> info@assabar.co.id</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-clock text-secondary mt-1"></i> Mon - Sat: 08:00 - 17:00</p>
+                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-map-marker-alt text-secondary mt-1"></i> Gg. II E No.3A, Ngipik, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-phone text-secondary mt-1"></i> +62 857 4816 9363</p>
+                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-envelope text-secondary mt-1"></i>sabarsuksesberkah@gmail.com</p>
+                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-clock text-secondary mt-1"></i> Senin - Sabtu: 08:00 - 16:00</p>
                     </div>
                 </div>
+
+            </div>
+            
+            <!-- Copyright -->
+            <div class="pt-8 text-center pb-8">
+                <p class="text-white/50 text-sm">© {{ date('Y') }} PT Assabar Sukses Berkah. All rights reserved.</p>
             </div>
         </div>
     </footer>

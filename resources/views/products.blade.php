@@ -5,17 +5,16 @@
 <!-- Page Header -->
 <section class="min-h-[50vh] flex items-center justify-center relative overflow-hidden">
     <!-- Slideshow Background -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="product-slide-track flex h-full transition-transform duration-700 ease-in-out" style="width: 500%;">
-            <div style="width: 33.333%;" class="h-full shrink-0">
-                <img src="/images/hero/image-1.png" alt="" class="w-full h-full object-cover">
-            </div>
-            <div style="width: 33.333%;" class="h-full shrink-0">
-                <img src="/images/hero/image-2.png" alt="" class="w-full h-full object-cover">
-            </div>
-            <div style="width: 33.333%;" class="h-full shrink-0">
-                <img src="/images/hero/image-3.png" alt="" class="w-full h-full object-cover">
-            </div>
+    <div class="absolute inset-0 z-0">
+        <!-- Slideshow Images -->
+        <div class="absolute inset-0 flex items-end justify-center pb-8">
+            <img src="/images/hero/image-1.png" alt="Produk 1" class="product-slide h-[80%] w-auto object-contain drop-shadow-2xl opacity-100 transition-opacity duration-700">
+        </div>
+        <div class="absolute inset-0 flex items-end justify-center pb-8">
+            <img src="/images/hero/image-2.png" alt="Produk 2" class="product-slide h-[80%] w-auto object-contain drop-shadow-2xl opacity-0 transition-opacity duration-700">
+        </div>
+        <div class="absolute inset-0 flex items-end justify-center pb-8">
+            <img src="/images/hero/image-3.png" alt="Produk 3" class="product-slide h-[80%] w-auto object-contain drop-shadow-2xl opacity-0 transition-opacity duration-700">
         </div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-dark/85 z-1"></div>
@@ -152,16 +151,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Product Header Slideshow (horizontal slide)
-    const slideTrack = document.querySelector('.product-slide-track');
+    // Product Header Slideshow (fade effect)
+    const productSlides = document.querySelectorAll('.product-slide');
     let currentProductSlide = 0;
-    const totalSlides = 3;
+    const totalSlides = productSlides.length;
+    
     function nextProductSlide() {
+        productSlides[currentProductSlide].classList.remove('opacity-100');
+        productSlides[currentProductSlide].classList.add('opacity-0');
         currentProductSlide = (currentProductSlide + 1) % totalSlides;
-        slideTrack.style.transform = 'translateX(-' + (currentProductSlide * (100 / totalSlides)) + '%)';
+        productSlides[currentProductSlide].classList.remove('opacity-0');
+        productSlides[currentProductSlide].classList.add('opacity-100');
     }
-    if (slideTrack) {
-        setInterval(nextProductSlide, 5000);
+    
+    if (productSlides.length > 0) {
+        setInterval(nextProductSlide, 7000);
     }
 });
 </script>
