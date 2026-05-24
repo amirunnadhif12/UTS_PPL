@@ -90,11 +90,10 @@
                             <i class="fas fa-arrow-left"></i>
                             Kembali ke Katalog
                         </a>
-                        <a href="https://wa.me/6285748169363?text=Halo, saya tertarik dengan produk {{ urlencode($product->nama_produk) }}. Apakah masih tersedia?" target="_blank" class="inline-flex items-center justify-center gap-3 py-3 sm:py-4 px-6 sm:px-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-semibold text-sm sm:text-base shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/50">
+                        <a href="https://wa.me/6285748169363?text={{ urlencode('Halo, saya tertarik dengan produk berikut:' . "\n\n" . 'Kategori: ' . $product->kategori . "\n" . 'Nama Produk: ' . $product->nama_produk . "\n\n" . 'Bisa info lebih lanjut?' . "\n\n" . 'Link: ' . url()->current()) }}" target="_blank" class="inline-flex items-center justify-center gap-3 py-3 sm:py-4 px-6 sm:px-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full font-semibold text-sm sm:text-base shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/50">
                             <i class="fab fa-whatsapp text-xl"></i>
-                            order disini
+                            Order Disini
                         </a>
-                        
                     </div>
 
                     <!-- Bagikan Produk -->
@@ -108,7 +107,7 @@
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <a href="https://twitter.com/intent/tweet?text={{ urlencode($product->nama_produk) }}&url={{ urlencode(url()->current()) }}" target="_blank" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30" title="Bagikan ke X">
-                                <i class="fab fa-x-twitter"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
                             </a>
                             <a href="https://telegram.me/share/url?url={{ urlencode(url()->current()) }}&text={{ urlencode($product->nama_produk) }}" target="_blank" class="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-500/30" title="Bagikan ke Telegram">
                                 <i class="fab fa-telegram-plane"></i>
@@ -148,6 +147,8 @@
     <!-- Counter -->
     <div id="lightboxCounter" class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium bg-black/40 px-4 py-1.5 rounded-full"></div>
 </div>
+
+
 @endsection
 
 @push('scripts')
@@ -250,5 +251,7 @@ const mainImg = document.getElementById('mainImg');
 if (mainImg) {
     mainImg.style.transition = 'opacity 0.2s ease';
 }
+
+
 </script>
 @endpush

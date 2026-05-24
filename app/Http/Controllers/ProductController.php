@@ -50,6 +50,7 @@ class ProductController extends Controller
             ],
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
+
             'gambar' => 'required|array|min:1|max:5',
             'gambar.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
         ], [
@@ -114,6 +115,7 @@ class ProductController extends Controller
             ],
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
+
             'gambar' => ($hasExistingImages ? 'nullable' : 'required') . '|array|max:5',
             'gambar.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
         ];

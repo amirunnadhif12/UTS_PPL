@@ -305,36 +305,36 @@
         <div class="bg-gradient-to-br from-primary to-dark rounded-3xl p-10 lg:p-12 text-white" data-aos="fade-up">
             <div class="text-center mb-8">
                 <h3 class="text-3xl font-bold mb-2">Filosofi "AS-SABAR"</h3>
-                <p class="text-white/80">Kami meyakini bahwa kesabaran adalah kunci keberlanjutan</p>
+                <p class="text-white/80 text-center">Kami meyakini bahwa kesabaran adalah kunci keberlanjutan</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-cogs text-secondary text-xl"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Sabar dalam Proses</h4>
-                    <p class="text-white/80 text-sm leading-relaxed">Fokus pada kualitas jangka panjang daripada tren sesaat.</p>
+                    <h4 class="font-bold text-lg mb-1 text-center">Sabar dalam Proses</h4>
+                    <p class="text-white/80 text-sm leading-loose text-center">Fokus pada kualitas jangka panjang daripada tren sesaat.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-heart text-secondary text-xl"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Sabar dalam Pelayanan</h4>
-                    <p class="text-white/80 text-sm leading-relaxed">Menanggapi setiap pelanggan dengan empati dan keramahan.</p>
+                    <h4 class="font-bold text-lg mb-1 text-center">Sabar dalam Pelayanan</h4>
+                    <p class="text-white/80 text-sm leading-loose text-center">Menanggapi setiap pelanggan dengan empati dan keramahan.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-hand-holding-heart text-secondary text-xl"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Sabar dalam Rezeki</h4>
-                    <p class="text-white/80 text-sm leading-relaxed">Percaya sepenuhnya bahwa rezeki yang halal pasti mencukupi tanpa harus berbuat curang.</p>
+                    <h4 class="font-bold text-lg mb-1 text-center">Sabar dalam Rezeki</h4>
+                    <p class="text-white/80 text-sm leading-loose text-center">Percaya sepenuhnya bahwa rezeki yang halal pasti mencukupi tanpa harus berbuat curang.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-pray text-secondary text-xl"></i>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Sabar dalam Niat</h4>
-                    <p class="text-white/80 text-sm leading-relaxed">Mengikhlaskan seluruh aktivitas bisnis sebagai bentuk ibadah.</p>
+                    <h4 class="font-bold text-lg mb-1 text-center">Sabar dalam Niat</h4>
+                    <p class="text-white/80 text-sm leading-loose text-center">Mengikhlaskan seluruh aktivitas bisnis sebagai bentuk ibadah.</p>
                 </div>
             </div>
         </div>

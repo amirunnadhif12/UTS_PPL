@@ -45,6 +45,7 @@
                 </div>
             </div>
 
+
             <div class="mt-6">
                 <label class="block mb-2 font-semibold text-dark text-sm" for="deskripsi">Deskripsi Produk</label>
                 <textarea name="deskripsi" id="deskripsi" 

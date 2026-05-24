@@ -2,16 +2,16 @@
 @section('title', 'Detail Artikel - PT Assabar Sukses Berkah')
 
 @php
-// Data artikel statis
-$articles = [
-    'dinamika-zaman-assabar' => [
-        'title' => 'Menghadapi Dinamika Zaman dengan Keteguhan Gaya dan Iman bersama As-Sabar',
-        'category' => 'Fashion',
-        'category_color' => 'bg-primary',
-        'date' => '5 Februari 2026',
-        'author' => 'Admin',
-        'image' => 'images/article/art1.jpeg',
-        'content' => '
+    // Data artikel statis
+    $articles = [
+        'dinamika-zaman-assabar' => [
+            'title' => 'Menghadapi Dinamika Zaman dengan Keteguhan Gaya dan Iman bersama As-Sabar',
+            'category' => 'Fashion',
+            'category_color' => 'bg-primary',
+            'date' => '5 Februari 2026',
+            'author' => 'Admin',
+            'image' => 'images/article/art1.jpeg',
+            'content' => '
             <p class="mb-6">Di era modern yang serba cepat ini, pria muslim seringkali dihadapkan pada tantangan untuk tetap tampil aktual dan relevan tanpa harus mengorbankan nilai-nilai tradisi dan syariat. Perubahan tren fashion yang sangat dinamis menuntut produk yang tidak hanya sekadar mengikuti zaman, tetapi juga memiliki karakter yang kuat, sederhana, dan elegan. Dalam kondisi inilah, PT Assabar Sukses Berkah hadir melalui lini produk unggulannya untuk memberikan jawaban atas kebutuhan busana muslim yang berkualitas tinggi.</p>
 
             <h3 class="text-2xl font-bold text-primary-dark mb-4">Gaya Modern dalam Balutan Tradisi</h3>
@@ -26,16 +26,16 @@ $articles = [
             <div class="bg-cream border-l-4 border-primary p-6 rounded-r-xl my-8">
                 <p class="text-gray-700 italic font-medium">Mengenakan As-Sabar bukan hanya soal tampil elegan dengan kualitas premium, tetapi juga tentang merayakan keteguhan iman dan konsistensi amal. Kami hadir untuk memastikan bahwa setiap usaha dan penampilan Anda bernilai ibadah yang diridhai Allah SWT.</p>
             </div>
-        '
-    ],
-    'ramadhan-syukur-sabar' => [
-        'title' => 'Menyambut Ramadhan dengan Syukur & Kesabaran: Refleksi Spiritual dalam Karya Fashion As-Sabar',
-        'category' => 'Spiritual',
-        'category_color' => 'bg-secondary text-primary-dark',
-        'date' => '1 Februari 2026',
-        'author' => 'Admin',
-        'image' => 'images/article/art2.jpeg',
-        'content' => '
+        ',
+        ],
+        'ramadhan-syukur-sabar' => [
+            'title' => 'Menyambut Ramadhan dengan Syukur & Kesabaran: Refleksi Spiritual dalam Karya Fashion As-Sabar',
+            'category' => 'Spiritual',
+            'category_color' => 'bg-secondary text-primary-dark',
+            'date' => '1 Februari 2026',
+            'author' => 'Admin',
+            'image' => 'images/article/art2.jpeg',
+            'content' => '
             <p class="mb-6">Bulan Ramadhan telah tiba kembali, bulan yang dinantikan oleh seluruh umat Islam di penjuru dunia. Bulan yang di dalamnya terkumpul berbagai keutamaan: ibadah dilipatgandakan pahalanya, pintu ampunan dibuka selebar-lebarnya, dan keberkahan turun membasahi setiap hati yang tulus. Bagi kami di As-Sabar, Ramadhan bukan sekadar momentum ritual tahunan, melainkan <em>madrasah ruhaniyah</em>sekolah spiritual yang mengajarkan dua nilai utama: syukur dan sabar, yang juga menjadi fondasi filosofi brand kami.</p>
 
             <h3 class="text-2xl font-bold text-primary-dark mb-4">Makna Sabar dalam Perspektif Al-Qur\'an dan Ulama</h3>
@@ -79,67 +79,82 @@ $articles = [
                 <p class="text-center italic text-lg leading-relaxed mb-4\">As-Sabar hadir tidak hanya sebagai merek fashion, tetapi sebagai sahabat spiritual yang ingin mengingatkan kita akan pentingnya kesabaran dan rasa syukur dalam setiap helai kehidupan.</p>
                 <p class="text-center font-bold text-secondary text-lg\">As-Sabar Fashion Tampil Syar\'i, Hidup Penuh Makna.</p>
             </div>
-        '
-    ]
-];
+        ',
+        ],
+    ];
 
-$article = $articles[$slug] ?? null;
+    $article = $articles[$slug] ?? null;
 @endphp
 
 @section('content')
-@if($article)
-
-<!-- Hero Section -->
-<section class="py-24 bg-islamic-gradient relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0L60 30L30 60L0 30z\' fill=\'%23ffffff\' fill-opacity=\'0.1\'/%3E%3C/svg%3E');"></div>
-    <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
-        <span class="inline-block {{ $article['category_color'] }} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">{{ $article['category'] }}</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" data-aos="fade-up" data-aos-delay="100">{{ $article['title'] }}</h1>
-    </div>
-</section>
-
-<!-- Article Content -->
-<section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-8">
-        <!-- Featured Image -->
-        <div class="rounded-2xl overflow-hidden shadow-xl mb-12 -mt-20 relative z-20" data-aos="fade-up">
-            <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="w-full h-90 object-cover">
-        </div>
-
-        <!-- Content -->
-        <article class="prose prose-lg max-w-none" data-aos="fade-up">
-            <div class="text-gray-600 leading-relaxed">
-                {!! $article['content'] !!}
+    @if ($article)
+        <!-- Hero Section -->
+        <section class="py-24 bg-islamic-gradient relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0L60 30L30 60L0 30z\' fill=\'%23ffffff\' fill-opacity=\'0.1\'/%3E%3C/svg%3E');">
             </div>
-        </article>
+            <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+                <span
+                    class="inline-block {{ $article['category_color'] }} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4"
+                    data-aos="fade-up">{{ $article['category'] }}</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" data-aos="fade-up"
+                    data-aos-delay="100">{{ $article['title'] }}</h1>
+            </div>
+        </section>
 
-        <!-- Share & Navigation -->
-        <div class="mt-12 pt-8 border-t border-gray-200">
-            <div class="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                    <span class="text-gray-500 mr-4">Bagikan:</span>
-                    <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors mr-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition-colors mr-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"><i class="fab fa-whatsapp"></i></a>
+        <!-- Article Content -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-8">
+                <!-- Featured Image -->
+                <div class="rounded-2xl overflow-hidden shadow-xl mb-12 -mt-20 relative z-20" data-aos="fade-up">
+                    <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}"
+                        class="w-full h-90 object-cover">
                 </div>
-                <a href="/" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
+
+                
+                <!-- Content -->
+                <article class="prose prose-lg max-w-none" data-aos="fade-up">
+                    <div class="text-gray-600 leading-relaxed text-justify">
+                        {!! $article['content'] !!}
+                    </div>
+                </article>
+
+                <!-- Share & Navigation -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="text-gray-500 mr-4">Bagikan:</span>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors mr-2"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($article['title']) }}" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-gray-800 transition-colors mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                            </a>
+                            <a href="https://wa.me/?text={{ urlencode($article['title'] . ' - ' . request()->url()) }}" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"><i
+                                    class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <a href="/"
+                            class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
+                            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @else
+        <!-- Article Not Found -->
+        <section class="py-32 bg-cream">
+            <div class="max-w-xl mx-auto px-8 text-center">
+                <i class="fas fa-file-alt text-6xl text-gray-300 mb-6"></i>
+                <h1 class="text-3xl font-bold text-primary-dark mb-4">Artikel Tidak Ditemukan</h1>
+                <p class="text-gray-600 mb-8">Maaf, artikel yang Anda cari tidak tersedia.</p>
+                <a href="/"
+                    class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     <i class="fas fa-arrow-left"></i> Kembali ke Beranda
                 </a>
             </div>
-        </div>
-    </div>
-</section>
-@else
-<!-- Article Not Found -->
-<section class="py-32 bg-cream">
-    <div class="max-w-xl mx-auto px-8 text-center">
-        <i class="fas fa-file-alt text-6xl text-gray-300 mb-6"></i>
-        <h1 class="text-3xl font-bold text-primary-dark mb-4">Artikel Tidak Ditemukan</h1>
-        <p class="text-gray-600 mb-8">Maaf, artikel yang Anda cari tidak tersedia.</p>
-        <a href="/" class="btn-primary-custom inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300">
-            <i class="fas fa-arrow-left"></i> Kembali ke Beranda
-        </a>
-    </div>
-</section>
-@endif
+        </section>
+    @endif
 @endsection

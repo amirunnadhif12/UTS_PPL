@@ -59,6 +59,9 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/faq" class="nav-link-custom text-white no-underline font-medium text-sm relative py-2 transition-colors duration-300 hover:text-secondary {{ request()->is('faq') ? 'active text-secondary' : '' }}">FAQ</a>
+                </li>
+                <li>
                     <a href="/contact" class="bg-gold-gradient text-primary-dark px-7 py-3 rounded-full font-semibold no-underline transition-all duration-300 shadow-lg hover:-translate-y-0.5 hover:shadow-xl">Contact Us</a>
                 </li>
             </ul>
@@ -71,9 +74,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="islamic-pattern bg-dark text-white pt-12 md:pt-16">
+    <footer class="islamic-pattern bg-dark text-white pt-12 md:pt-16 text-left">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-8 md:pb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-10 md:pb-14">
                 <!-- Brand -->
                 <div class="sm:col-span-2 lg:col-span-1">
                     <h3 class="text-xl md:text-2xl text-secondary font-bold mb-3 md:mb-4">PT Assabar Sukses Berkah</h3>
@@ -102,9 +105,9 @@
                     <h4 class="text-white text-lg font-semibold mb-6 relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Marketplace</h4>
                     <ul class="list-none space-y-3">
                         <li><a href="https://shopee.co.id/as_sabarofficialshop" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-bag"></i> Shopee</a></li>
-                        <li><a href="https://www.tokopedia.com/as-sabar-moslem-wear" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>         
+                        <li><a href="https://www.tokopedia.com/as-sabar-moslem-wear" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>
                         <li><a href="https://www.lazada.co.id/as-sabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-basket"></i> Lazada</a></li>
-                        <li><a href="https://vt.tiktok.com/ZSmL7D97K/?page=Mall" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fab fa-tiktok"></i> TikTok shop</a></li>
+                        <li><a href="https://vt.tiktok.com/ZSmL7D97K/?page=Mall" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fab fa-tiktok"></i> TikTok Shop</a></li>
                     </ul>
                 </div>
 
@@ -112,21 +115,39 @@
                 <div>
                     <h4 class="text-white text-lg font-semibold mb-6 relative pb-3 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-secondary">Contact Info</h4>
                     <div class="space-y-4">
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-map-marker-alt text-secondary mt-1"></i> Gg. II E No.3A, Ngipik, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-phone text-secondary mt-1"></i> +62 857 4816 9363</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-envelope text-secondary mt-1"></i>sabarsuksesberkah@gmail.com</p>
-                        <p class="text-white/70 flex items-start gap-4"><i class="fas fa-clock text-secondary mt-1"></i> Senin - Sabtu: 08:00 - 16:00</p>
+                        <p class="text-white/70 flex items-start gap-3 text-sm"><i class="fas fa-map-marker-alt text-secondary mt-0.5 w-4 text-center"></i> Gg. II E No.3A, Ngipik, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                        <p class="text-white/70 flex items-start gap-3 text-sm"><i class="fas fa-phone text-secondary mt-0.5 w-4 text-center"></i> +62 857 4816 9363</p>
+                        <p class="text-white/70 flex items-start gap-3 text-sm"><i class="fas fa-envelope text-secondary mt-0.5 w-4 text-center"></i> sabarsuksesberkah@gmail.com</p>
+                        <p class="text-white/70 flex items-start gap-3 text-sm"><i class="fas fa-clock text-secondary mt-0.5 w-4 text-center"></i> Senin - Sabtu: 08:00 - 16:00</p>
                     </div>
                 </div>
-
             </div>
             
             <!-- Copyright -->
-            <div class="pt-8 text-center pb-8">
-                <p class="text-white/50 text-sm">© {{ date('Y') }} PT Assabar Sukses Berkah. All rights reserved.</p>
+            <div class="py-6 md:py-8 text-center">
+                <p class="text-white/50 text-sm">© {{ date('Y') }} PT. Assabar Sukses Berkah. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Live Chat Button -->
+    <a href="https://wa.me/6285748169363?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20As-Sabar" target="_blank" id="waFloat"
+       class="fixed bottom-24 right-5 sm:bottom-28 sm:right-7 z-50 group flex items-center no-underline">
+        <!-- Tooltip -->
+        <span class="hidden group-hover:flex items-center mr-3 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-full shadow-lg whitespace-nowrap transition-all duration-300 animate-fade-in">
+            <i class="fas fa-comment-dots text-green-500 mr-2"></i>
+            order disini!
+        </span>
+        <!-- Button -->
+        <div class="relative">
+            <div class="absolute inset-0 bg-green-400 rounded-full animate-wa-ping"></div>
+            <div class="relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-xl text-white text-2xl sm:text-3xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:from-green-500 group-hover:to-green-700">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <!-- Online indicator -->
+            <span class="absolute top-0 right-0 w-4 h-4 bg-yellow-400 border-2 border-white rounded-full animate-pulse"></span>
+        </div>
+    </a>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scrollTop">

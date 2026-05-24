@@ -130,7 +130,20 @@
         </div>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-            <!-- Product 1 - Gamis -->
+
+            <!-- Baju Koko -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
+                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Baju Koko</h3>
+                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
+                        Lihat Produk <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Gamis -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="100">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
                     <img src="/images/produk/gamis-1.png" alt="Gamis" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
@@ -143,23 +156,12 @@
                 </div>
             </div>
 
-            <!-- Product 2 - Baju Koko -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="200">
-                <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/bajukoko.png" alt="Baju Koko" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-primary-dark mb-3">Baju Koko</h3>
-                    <a href="/products?category=koko" class="inline-flex items-center gap-2 text-primary font-semibold transition-all duration-300 hover:text-secondary hover:gap-3">
-                        Lihat Produk <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+            
 
-            <!-- Product 3 - Songkok -->
+            <!--  Songkok -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 ease-out" data-aos="fade-up" data-aos-delay="300">
                 <div class="h-96 bg-islamic-gradient flex items-center justify-center relative overflow-hidden">
-                    <img src="/images/produk/songkok1.jpeg" alt="Songkok" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
+                    <img src="/images/produk/songkok.jpeg" alt="Songkok" class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105">
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-primary-dark mb-3">Songkok</h3>
@@ -258,75 +260,143 @@
     </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="py-24 bg-islamic-gradient">
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
+<!-- Testimonial & Review Slider Section -->
+<section class="py-16 sm:py-24 md:py-32 bg-islamic-gradient relative overflow-hidden">
+    <!-- Decorative background -->
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'0.15\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
             <span class="text-secondary font-semibold text-sm uppercase tracking-widest block mb-3">Testimoni Pelanggan</span>
-            <h2 class="text-4xl font-bold text-white mb-4">Apa Kata Mereka?</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Apa Kata Mereka?</h2>
             <div class="flex items-center justify-center gap-4">
-                <span class="w-16 h-0.5 bg-secondary"></span>
-                <i class="fas fa-comments text-secondary text-2xl"></i>
-                <span class="w-16 h-0.5 bg-secondary"></span>
+                <span class="w-12 sm:w-16 h-0.5 bg-secondary"></span>
+                <i class="fas fa-comments text-secondary text-xl sm:text-2xl"></i>
+                <span class="w-12 sm:w-16 h-0.5 bg-secondary"></span>
             </div>
+            <p class="text-white/70 mt-4 text-sm sm:text-base max-w-2xl mx-auto">Review langsung dari pelanggan setia As-Sabar di berbagai marketplace</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex gap-1 text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-white text-sm mb-4 leading-relaxed">"Produk As-Sabar sangat berkualitas dan nyaman dipakai. Saya suka desainnya yang modern tapi tetap islami. Bahan gamis nya adem dan tidak mudah kusut."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">AF</div>
-                    <div>
-                        <h4 class="text-white font-semibold">Ahmad Fauzi</h4>
-                        <span class="text-white/80 text-xs">Jakarta</span>
+
+        <!-- Slider Container -->
+        <div class="relative" data-aos="fade-up" data-aos-delay="100">
+            <!-- Navigation Arrows -->
+            <button id="sliderPrev" class="absolute -left-2 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+                <i class="fas fa-chevron-left text-sm sm:text-base"></i>
+            </button>
+            <button id="sliderNext" class="absolute -right-2 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg">
+                <i class="fas fa-chevron-right text-sm sm:text-base"></i>
+            </button>
+
+            <!-- Slider Track -->
+            <div class="overflow-hidden rounded-2xl mx-4 sm:mx-6 lg:mx-8" id="reviewSlider">
+                <div class="flex transition-transform duration-500 ease-out" id="reviewTrack">
+
+                    <!-- Review Card 1 -->
+                    <div class="review-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3">
+                        <div class="bg-white/15 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full border border-white/10">
+                            <!-- Screenshot Review Image -->
+                            <div class="relative h-56 sm:h-64 bg-white/5 overflow-hidden group">
+                                <img src="/images/testimoni/shoope.png" alt="Review Pelanggan 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20 items-center justify-center text-white/50 hidden">
+                                    <div class="text-center">
+                                        <i class="fas fa-image text-4xl mb-2"></i>
+                                        <p class="text-xs">Screenshot Review</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Info Footer -->
+                            <div class="p-4 sm:p-5">
+                                <div class="flex gap-1 text-secondary mb-2">
+                                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="/images/logo/logo shoope.png" alt="Shopee" class="w-9 h-9 rounded-full object-contain bg-white p-1">
+                                    <div>
+                                        <h4 class="text-white font-semibold text-sm">Pelanggan Shopee</h4>
+                                        <span class="text-white/60 text-xs">⭐ Verified Buyer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3">
+                        <div class="bg-white/15 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full border border-white/10">
+                            <div class="relative h-56 sm:h-64 bg-white/5 overflow-hidden group">
+                                <img src="/images/testimoni/tokopedia.jpeg" alt="Review Pelanggan 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20 items-center justify-center text-white/50 hidden">
+                                    <div class="text-center"><i class="fas fa-image text-4xl mb-2"></i><p class="text-xs">Screenshot Review</p></div>
+                                </div>
+                            </div>
+                            <div class="p-4 sm:p-5">
+                                <div class="flex gap-1 text-secondary mb-2">
+                                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="/images/logo/logo tokopedia.png" alt="Tokopedia" class="w-9 h-9 rounded-full object-contain bg-white p-1">
+                                    <div>
+                                        <h4 class="text-white font-semibold text-sm">Pelanggan Tokopedia</h4>
+                                        <span class="text-white/60 text-xs">⭐ Verified Buyer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="review-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3">
+                        <div class="bg-white/15 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full border border-white/10">
+                            <div class="relative h-56 sm:h-64 bg-white/5 overflow-hidden group">
+                                <img src="/images/testimoni/tiktokshop.jpeg" alt="Review Pelanggan 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20 items-center justify-center text-white/50 hidden">
+                                    <div class="text-center"><i class="fas fa-image text-4xl mb-2"></i><p class="text-xs">Screenshot Review</p></div>
+                                </div>
+                            </div>
+                            <div class="p-4 sm:p-5">
+                                <div class="flex gap-1 text-secondary mb-2">
+                                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="/images/logo/logo tiktokshop.png" alt="TikTok Shop" class="w-9 h-9 rounded-full object-contain bg-white p-1">
+                                    <div>
+                                        <h4 class="text-white font-semibold text-sm">Pelanggan TikTok Shop</h4>
+                                        <span class="text-white/60 text-xs">⭐ Verified Buyer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 4 -->
+                    <div class="review-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3">
+                        <div class="bg-white/15 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full border border-white/10">
+                            <div class="relative h-56 sm:h-64 bg-white/5 overflow-hidden group">
+                                <img src="/images/testimoni/lazada.jpeg" alt="Review Pelanggan 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20 items-center justify-center text-white/50 hidden">
+                                    <div class="text-center"><i class="fas fa-image text-4xl mb-2"></i><p class="text-xs">Screenshot Review</p></div>
+                                </div>
+                            </div>
+                            <div class="p-4 sm:p-5">
+                                <div class="flex gap-1 text-secondary mb-2">
+                                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star-half-alt text-xs"></i>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <img src="/images/logo/logo lazada.png" alt="Lazada" class="w-9 h-9 rounded-full object-contain bg-white p-1">
+                                    <div>
+                                        <h4 class="text-white font-semibold text-sm">Pelanggan Lazada</h4>
+                                        <span class="text-white/60 text-xs">⭐ Verified Buyer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Testimonial 2 -->
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex gap-1 text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-white text-sm mb-4 leading-relaxed">"Songkok dari As-Sabar kualitasnya premium banget. Jahitannya rapi dan bahannya tidak bikin panas di kepala. Sudah langganan dari 2 tahun lalu!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">MR</div>
-                    <div>
-                        <h4 class="text-white font-semibold">Muhammad Rizki</h4>
-                        <span class="text-white/80 text-xs">Surabaya</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex gap-1 text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="text-white text-sm mb-4 leading-relaxed">"Baju koko As-Sabar cocok untuk acara formal maupun santai. Pengiriman cepat dan packaging rapi. Pelayanannya sangat ramah dan responsif."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">HA</div>
-                    <div>
-                        <h4 class="text-white font-semibold">Hasan Abdullah</h4>
-                        <span class="text-white/80 text-xs">Bandung</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Dot Indicators -->
+            <div class="flex justify-center gap-2 mt-6 sm:mt-8" id="sliderDots"></div>
         </div>
     </div>
 </section>
@@ -375,6 +445,161 @@
     if (slides.length > 0) {
         slides[0].style.opacity = '1';
     }
+
+    // ===== FAQ Accordion =====
+    function toggleFaq(button) {
+        const faqItem = button.closest('.faq-item');
+        const content = faqItem.querySelector('.faq-content');
+        const icon = button.querySelector('i');
+        const isActive = faqItem.classList.contains('active');
+
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item.active').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+                item.querySelector('.faq-content').style.maxHeight = '0';
+                item.querySelector('.faq-toggle i').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Toggle current
+        if (isActive) {
+            faqItem.classList.remove('active');
+            content.style.maxHeight = '0';
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            faqItem.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    // ===== Review Slider / Carousel =====
+    (function() {
+        const track = document.getElementById('reviewTrack');
+        const slider = document.getElementById('reviewSlider');
+        const prevBtn = document.getElementById('sliderPrev');
+        const nextBtn = document.getElementById('sliderNext');
+        const dotsContainer = document.getElementById('sliderDots');
+
+        if (!track || !slider) return;
+
+        const allSlides = track.querySelectorAll('.review-slide');
+        const totalSlides = allSlides.length;
+        let currentIndex = 0;
+        let slidesPerView = 3;
+        let autoPlayInterval;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function getSlidesPerView() {
+            if (window.innerWidth < 640) return 1;
+            if (window.innerWidth < 1024) return 2;
+            return 3;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, totalSlides - slidesPerView);
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const maxIndex = getMaxIndex();
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-secondary w-8' : 'bg-white/40 hover:bg-white/60'}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.className = 'w-8 h-2.5 rounded-full bg-secondary transition-all duration-300';
+                } else {
+                    dot.className = 'w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300';
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            const maxIndex = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            const slideWidth = 100 / slidesPerView;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            updateDots();
+        }
+
+        function nextReview() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex >= maxIndex) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentIndex + 1);
+            }
+        }
+
+        function prevReview() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex <= 0) {
+                goToSlide(maxIndex);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(nextReview, 4000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+        }
+
+        function handleResize() {
+            slidesPerView = getSlidesPerView();
+            const maxIndex = getMaxIndex();
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            createDots();
+            goToSlide(currentIndex);
+        }
+
+        // Event Listeners
+        prevBtn.addEventListener('click', () => { prevReview(); startAutoPlay(); });
+        nextBtn.addEventListener('click', () => { nextReview(); startAutoPlay(); });
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', stopAutoPlay);
+        slider.addEventListener('mouseleave', startAutoPlay);
+
+        // Touch/Swipe support
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoPlay();
+        }, { passive: true });
+
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextReview();
+                else prevReview();
+            }
+            startAutoPlay();
+        }, { passive: true });
+
+        // Window resize
+        window.addEventListener('resize', handleResize);
+
+        // Initialize
+        slidesPerView = getSlidesPerView();
+        createDots();
+        goToSlide(0);
+        startAutoPlay();
+    })();
 </script>
 @endpush
 

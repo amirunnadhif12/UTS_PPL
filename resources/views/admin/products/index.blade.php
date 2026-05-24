@@ -74,13 +74,9 @@
                                 <a href="{{ route('admin.products.edit', $product->id) }}" class="inline-flex items-center justify-center w-9 h-9 bg-gold-gradient text-dark rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" title="Edit">
                                     <i class="fas fa-edit text-sm"></i>
                                 </a>
-                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center justify-center w-9 h-9 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" title="Hapus">
-                                        <i class="fas fa-trash text-sm"></i>
-                                    </button>
-                                </form>
+                                <button type="button" onclick="deleteSingleProduct('{{ route('admin.products.destroy', $product->id) }}')" class="inline-flex items-center justify-center w-9 h-9 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" title="Hapus">
+                                    <i class="fas fa-trash text-sm"></i>
+                                </button>
                             </div>
                         </td>
                     </tr>
@@ -151,6 +147,26 @@ function filterProducts() {
         } else {
             row.style.display = 'none';
         }
+    });
+}
+
+function deleteSingleProduct(url) {
+    if (!confirm('Yakin ingin menghapus produk ini?')) return;
+
+    fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'Accept': 'application/json',
+        },
+    }).then(response => {
+        if (response.ok || response.redirected) {
+            window.location.reload();
+        } else {
+            alert('Gagal menghapus produk. Silakan coba lagi.');
+        }
+    }).catch(() => {
+        alert('Terjadi kesalahan. Silakan coba lagi.');
     });
 }
 </script>
