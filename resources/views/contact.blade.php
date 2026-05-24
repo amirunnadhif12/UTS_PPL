@@ -30,7 +30,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-primary-dark mb-1">Alamat</h4>
-                            <p class="text-gray-600 text-sm">Jl. Contoh Alamat No. 123<br>Kota, Provinsi 12345</p>
+                            <p class="text-gray-600 text-sm">Gg. II E No.3A, Ngipik, Kec. Gresik <br>Kabupaten Gresik, Jawa Timur 61119</p>
                         </div>
                     </li>
 

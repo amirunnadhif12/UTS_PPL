@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
@@ -41,11 +42,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_produk' => 'required|string|max:255',
+            'nama_produk' => [
+                'required', 'string', 'max:255',
+                Rule::unique('products')->where(function ($query) use ($request) {
+                    return $query->where('kategori', $request->kategori);
+                }),
+            ],
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|array|max:5',
-            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'gambar' => 'required|array|min:1|max:5',
+            'gambar.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+        ], [
+            'nama_produk.unique' => 'Nama produk sudah ada dalam kategori ini.',
+            'gambar.required' => 'Gambar produk wajib diupload minimal 1.',
+            'gambar.min' => 'Gambar produk wajib diupload minimal 1.',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
@@ -92,12 +102,25 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $request->validate([
-            'nama_produk' => 'required|string|max:255',
+        // Cek apakah produk sudah punya gambar
+        $hasExistingImages = $product->gambar1 || $product->gambar2 || $product->gambar3 || $product->gambar4 || $product->gambar5;
+
+        $rules = [
+            'nama_produk' => [
+                'required', 'string', 'max:255',
+                Rule::unique('products')->where(function ($query) use ($request) {
+                    return $query->where('kategori', $request->kategori);
+                })->ignore($product->id),
+            ],
             'kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|array|max:5',
-            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'gambar' => ($hasExistingImages ? 'nullable' : 'required') . '|array|max:5',
+            'gambar.*' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+        ];
+
+        $request->validate($rules, [
+            'nama_produk.unique' => 'Nama produk sudah ada dalam kategori ini.',
+            'gambar.required' => 'Gambar produk wajib diupload minimal 1.',
         ]);
 
         $data = $request->only(['nama_produk', 'kategori', 'deskripsi']);
@@ -142,6 +165,32 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')
             ->with('success', 'Produk berhasil dihapus!');
+    }
+
+    /**
+     * Bulk delete products.
+     */
+    public function bulkDestroy(Request $request)
+    {
+        $request->validate([
+            'ids' => 'required|array|min:1',
+            'ids.*' => 'required|integer|exists:products,id',
+        ]);
+
+        $products = Product::whereIn('id', $request->ids)->get();
+
+        foreach ($products as $product) {
+            for ($i = 1; $i <= 5; $i++) {
+                $field = 'gambar' . $i;
+                if ($product->$field) {
+                    Storage::disk('public')->delete($product->$field);
+                }
+            }
+            $product->delete();
+        }
+
+        return redirect()->route('admin.products.index')
+            ->with('success', count($request->ids) . ' produk berhasil dihapus!');
     }
 
     /**

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Home - PT Assabar Sukses Berkah | Muslim Fashion Excellence')
+@section('title', 'As-Sabar Official- Website Resmi PT Assabar Sukses Berkah ')
 
 @section('content')
 <!-- Hero Section -->
@@ -258,6 +258,78 @@
     </div>
 </section>
 
+<!-- Testimonial Section -->
+<section class="py-24 bg-islamic-gradient">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-secondary font-semibold text-sm uppercase tracking-widest block mb-3">Testimoni Pelanggan</span>
+            <h2 class="text-4xl font-bold text-white mb-4">Apa Kata Mereka?</h2>
+            <div class="flex items-center justify-center gap-4">
+                <span class="w-16 h-0.5 bg-secondary"></span>
+                <i class="fas fa-comments text-secondary text-2xl"></i>
+                <span class="w-16 h-0.5 bg-secondary"></span>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex gap-1 text-secondary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-white text-sm mb-4 leading-relaxed">"Produk As-Sabar sangat berkualitas dan nyaman dipakai. Saya suka desainnya yang modern tapi tetap islami. Bahan gamis nya adem dan tidak mudah kusut."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">AF</div>
+                    <div>
+                        <h4 class="text-white font-semibold">Ahmad Fauzi</h4>
+                        <span class="text-white/80 text-xs">Jakarta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex gap-1 text-secondary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-white text-sm mb-4 leading-relaxed">"Songkok dari As-Sabar kualitasnya premium banget. Jahitannya rapi dan bahannya tidak bikin panas di kepala. Sudah langganan dari 2 tahun lalu!"</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">MR</div>
+                    <div>
+                        <h4 class="text-white font-semibold">Muhammad Rizki</h4>
+                        <span class="text-white/80 text-xs">Surabaya</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex gap-1 text-secondary mb-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text-white text-sm mb-4 leading-relaxed">"Baju koko As-Sabar cocok untuk acara formal maupun santai. Pengiriman cepat dan packaging rapi. Pelayanannya sangat ramah dan responsif."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-lg">HA</div>
+                    <div>
+                        <h4 class="text-white font-semibold">Hasan Abdullah</h4>
+                        <span class="text-white/80 text-xs">Bandung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- CTA Section -->
 <section class="py-24 bg-cream">
     <div class="max-w-4xl mx-auto px-8" data-aos="fade-up">

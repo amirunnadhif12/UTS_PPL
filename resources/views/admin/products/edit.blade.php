@@ -59,7 +59,7 @@
             <h4 class="flex items-center gap-3 mt-10 mb-4 pb-3 border-b-2 border-gray-100 text-dark text-lg font-semibold">
                 <i class="fas fa-images text-primary text-xl"></i> Gambar Produk
             </h4>
-            <p class="text-gray-500 text-sm mb-6">Upload gambar baru untuk mengganti yang lama (format: JPG, PNG, GIF, WebP. Max: 2MB per gambar)</p>
+            <p class="text-gray-500 text-sm mb-6">Upload hingga 5 gambar produk baru (format: JPG, PNG, GIF, WebP.)</p>
 
             <!-- Current Images -->
             @php

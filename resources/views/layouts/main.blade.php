@@ -33,7 +33,7 @@
                     <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="w-full h-full object-contain rounded-full">
                 </div>
                 <div class="min-w-0">
-                    <h1 class="text-white text-sm sm:text-lg md:text-xl font-bold drop-shadow-md truncate">PT Assabar Sukses Berkah</h1>
+                    <h1 class="text-white text-sm sm:text-lg md:text-xl font-bold drop-shadow-md truncate">As-Sabar Official</h1>
                     <p class="text-secondary text-[10px] sm:text-xs font-medium">Moslem Wear</p>
                 </div>
             </a>
@@ -104,6 +104,7 @@
                         <li><a href="https://shopee.co.id/as_sabarofficialshop" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-bag"></i> Shopee</a></li>
                         <li><a href="https://www.tokopedia.com/as-sabar-moslem-wear" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-store"></i> Tokopedia</a></li>         
                         <li><a href="https://www.lazada.co.id/as-sabar" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fas fa-shopping-basket"></i> Lazada</a></li>
+                        <li><a href="https://vt.tiktok.com/ZSmL7D97K/?page=Mall" target="_blank" class="text-white/70 no-underline flex items-center gap-2 transition-all duration-300 hover:text-secondary hover:pl-1"><i class="fab fa-tiktok"></i> TikTok shop</a></li>
                     </ul>
                 </div>
 

@@ -6,9 +6,9 @@
     <title>Login Admin - PT Assabar Sukses Berkah</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo/logo asli.png') }}">
-    <link rel="shortcut icon" href="{{ asset('images/logo/logo asli.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo/logo asli.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

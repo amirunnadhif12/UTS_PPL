@@ -62,7 +62,7 @@
 
             <div class="grid grid-cols-1 gap-4">
                 <div>
-                    <label class="block mb-2 font-medium text-dark text-sm">Upload Gambar (Maksimal 5)</label>
+                    <label class="block mb-2 font-medium text-dark text-sm">Upload Gambar (Maksimal 5) <span class="text-red-500">*</span></label>
                     <div id="dropZone" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center transition-all duration-300 hover:border-primary hover:bg-primary/5 cursor-pointer">
                         <input type="file" name="gambar[]" id="gambarInput" 
                                class="hidden" 

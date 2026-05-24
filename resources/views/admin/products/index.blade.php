@@ -2,7 +2,7 @@
 @section('title', 'Kelola Produk')
 
 @section('content')
-<div class="flex justify-between items-center mb-8">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
     <h1 class="text-2xl font-bold text-dark flex items-center gap-3">
         <i class="fas fa-box text-primary"></i> Kelola Produk
     </h1>
@@ -11,15 +11,35 @@
     </a>
 </div>
 
-<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-    <div class="px-6 py-4 bg-gradient-to-r from-cream to-white border-b border-gray-100 flex items-center gap-3 font-semibold text-dark">
-        <i class="fas fa-list text-primary"></i> Daftar Produk ({{ $products->count() }})
+<!-- Search -->
+<div class="mb-6">
+    <div class="relative">
+        <input type="text" id="searchProduct" placeholder="Cari produk berdasarkan nama atau kategori..." class="w-full py-3 pl-12 pr-4 bg-white border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 transition-all duration-300 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 hover:border-gray-300 shadow-sm" oninput="filterProducts()">
+        <div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <i class="fas fa-search"></i>
+        </div>
     </div>
+</div>
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+    <div class="px-6 py-4 bg-gradient-to-r from-cream to-white border-b border-gray-100 flex items-center justify-between">
+        <div class="flex items-center gap-3 font-semibold text-dark">
+            <i class="fas fa-list text-primary"></i> Daftar Produk ({{ $products->count() }})
+        </div>
+        <button type="button" id="bulkDeleteBtn" onclick="submitBulkDelete()" class="hidden items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold text-sm shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <i class="fas fa-trash"></i> Hapus Terpilih (<span id="selectedCount">0</span>)
+        </button>
+    </div>
+    <form id="bulkDeleteForm" action="{{ route('admin.products.bulkDestroy') }}" method="POST">
+        @csrf
     <div class="overflow-x-auto">
         @if($products->count() > 0)
             <table class="w-full">
                 <thead>
                     <tr>
+                        <th class="px-4 py-4 bg-gradient-to-r from-cream to-white border-b border-gray-100 w-12">
+                            <input type="checkbox" id="selectAll" onclick="toggleSelectAll()" class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer">
+                        </th>
                         <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Gambar</th>
                         <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Nama Produk</th>
                         <th class="px-5 py-4 text-left bg-gradient-to-r from-cream to-white text-xs font-semibold uppercase tracking-wider text-dark border-b border-gray-100">Kategori</th>
@@ -31,6 +51,9 @@
                 <tbody>
                     @foreach($products as $product)
                     <tr class="hover:bg-gradient-to-r hover:from-primary/5 hover:to-secondary/5 transition-all duration-300">
+                        <td class="px-4 py-4 border-b border-gray-50">
+                            <input type="checkbox" name="ids[]" value="{{ $product->id }}" class="product-checkbox w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer" onclick="updateBulkButton()">
+                        </td>
                         <td class="px-5 py-4 border-b border-gray-50">
                             @if($product->gambar1)
                                 <img src="{{ asset('storage/' . $product->gambar1) }}" alt="{{ $product->nama_produk }}" class="w-16 h-16 object-cover rounded-xl shadow-md">
@@ -72,5 +95,63 @@
             </div>
         @endif
     </div>
+    </form>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function toggleSelectAll() {
+    const selectAll = document.getElementById('selectAll');
+    const checkboxes = document.querySelectorAll('.product-checkbox');
+    checkboxes.forEach(cb => cb.checked = selectAll.checked);
+    updateBulkButton();
+}
+
+function updateBulkButton() {
+    const checkboxes = document.querySelectorAll('.product-checkbox:checked');
+    const bulkBtn = document.getElementById('bulkDeleteBtn');
+    const selectedCount = document.getElementById('selectedCount');
+    const selectAll = document.getElementById('selectAll');
+    const allCheckboxes = document.querySelectorAll('.product-checkbox');
+
+    selectedCount.textContent = checkboxes.length;
+
+    if (checkboxes.length > 0) {
+        bulkBtn.classList.remove('hidden');
+        bulkBtn.classList.add('inline-flex');
+    } else {
+        bulkBtn.classList.add('hidden');
+        bulkBtn.classList.remove('inline-flex');
+    }
+
+    selectAll.checked = allCheckboxes.length > 0 && checkboxes.length === allCheckboxes.length;
+    selectAll.indeterminate = checkboxes.length > 0 && checkboxes.length < allCheckboxes.length;
+}
+
+function submitBulkDelete() {
+    const count = document.querySelectorAll('.product-checkbox:checked').length;
+    if (confirm('Yakin ingin menghapus ' + count + ' produk yang dipilih?')) {
+        document.getElementById('bulkDeleteForm').submit();
+    }
+}
+
+function filterProducts() {
+    const keyword = document.getElementById('searchProduct').value.toLowerCase();
+    const rows = document.querySelectorAll('#bulkDeleteForm tbody tr');
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+        const nama = row.querySelector('td:nth-child(3)')?.textContent.toLowerCase() || '';
+        const kategori = row.querySelector('td:nth-child(4)')?.textContent.toLowerCase() || '';
+
+        if (nama.includes(keyword) || kategori.includes(keyword)) {
+            row.style.display = '';
+            visibleCount++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+</script>
+@endpush
