@@ -73,7 +73,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('admin.login') }}" method="POST" class="space-y-5">
+                <form action="{{ route('admin.login') }}" method="POST" class="space-y-5" id="loginForm" novalidate>
                     @csrf
                     
                     <!-- Email Input -->
@@ -122,9 +122,9 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 shadow-lg shadow-teal-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-500/40 active:translate-y-0 group">
-                        <i class="fas fa-sign-in-alt group-hover:translate-x-1 transition-transform"></i>
-                        <span>Masuk ke Dashboard</span>
+                    <button type="submit" id="submitBtn" class="w-full py-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-500 text-white rounded-xl font-semibold text-base flex items-center justify-center gap-3 shadow-lg shadow-teal-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-500/40 active:translate-y-0 group">
+                        <i class="fas fa-sign-in-alt group-hover:translate-x-1 transition-transform" id="btnIcon"></i>
+                        <span id="btnText">Masuk ke Dashboard</span>
                     </button>
                 </form>
             </div>
@@ -157,6 +157,21 @@
                 toggleIcon.classList.add('fa-eye');
             }
         }
+
+        // Prevent double submit
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            btn.disabled = true;
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            if (btnIcon) {
+                btnIcon.className = 'fas fa-spinner fa-spin';
+            }
+            if (btnText) {
+                btnText.textContent = 'Memproses...';
+            }
+        });
     </script>
 </body>
 </html>

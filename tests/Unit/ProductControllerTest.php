@@ -269,4 +269,109 @@ class ProductControllerTest extends TestCase
         $this->assertNull($product->gambar1);
         Storage::disk('public')->assertMissing('products/test-image.jpg');
     }
+
+    /**
+     * UT-PCTRL-013: Optimistic Locking - Gagal update jika data sudah diubah oleh sesi lain
+     */
+    public function test_update_fails_with_optimistic_locking_mismatch(): void
+    {
+        $this->actingAs($this->admin);
+
+        $product = Product::create([
+            'nama_produk' => 'Produk A',
+            'kategori' => 'Kategori A',
+            'tanggal_dibuat' => now()->subMinutes(10),
+            'tanggal_update' => now()->subMinutes(5),
+        ]);
+
+        // Coba kirim update dengan timestamp usang (misal subMinutes(10))
+        $oldTimestamp = now()->subMinutes(10)->timestamp;
+
+        $response = $this->from(route('admin.products.edit', $product->id))
+            ->put(route('admin.products.update', $product->id), [
+                'nama_produk' => 'Produk A Updated',
+                'kategori' => 'Kategori A',
+                'last_updated_at' => $oldTimestamp,
+            ]);
+
+        $response->assertRedirect(route('admin.products.edit', $product->id));
+        $response->assertSessionHasErrors('nama_produk');
+        
+        $product->refresh();
+        $this->assertEquals('Produk A', $product->nama_produk); // Data tidak berubah
+    }
+
+    /**
+     * UT-PCTRL-014: Staging & Reordering Gambar - Gambar tersisa ditata ulang secara kontigu
+     */
+    public function test_update_stages_and_reorders_images_contiguously(): void
+    {
+        Storage::fake('public');
+        $this->actingAs($this->admin);
+
+        // Buat berkas-berkas gambar palsu
+        $file1 = 'products/img1.jpg';
+        $file2 = 'products/img2.jpg';
+        $file3 = 'products/img3.jpg';
+        Storage::disk('public')->put($file1, 'fake image 1');
+        Storage::disk('public')->put($file2, 'fake image 2');
+        Storage::disk('public')->put($file3, 'fake image 3');
+
+        $product = Product::create([
+            'nama_produk' => 'Baju Muslim',
+            'kategori' => 'Gamis',
+            'gambar1' => $file1,
+            'gambar2' => $file2,
+            'gambar3' => $file3,
+        ]);
+
+        $newImage = UploadedFile::fake()->image('new.jpg');
+
+        // Update dengan menghapus gambar2 (tengah) dan menambahkan gambar baru
+        $response = $this->put(route('admin.products.update', $product->id), [
+            'nama_produk' => 'Baju Muslim',
+            'kategori' => 'Gamis',
+            'delete_images' => ['gambar2'],
+            'gambar' => [$newImage],
+        ]);
+
+        $response->assertRedirect(route('admin.products.index'));
+
+        $product->refresh();
+
+        // Gambar 1 tetap file1
+        $this->assertEquals($file1, $product->gambar1);
+        // Gambar 2 (tengah) digantikan oleh file3 (karena bergeser mengisi slot kosong)
+        $this->assertEquals($file3, $product->gambar2);
+        // Gambar 3 diisi gambar baru yang diunggah
+        $this->assertNotNull($product->gambar3);
+        $this->assertNotEquals($file3, $product->gambar3);
+        // Gambar 4 dan 5 kosong
+        $this->assertNull($product->gambar4);
+        $this->assertNull($product->gambar5);
+
+        // Berkas img2.jpg harus terhapus secara fisik dari storage
+        Storage::disk('public')->assertMissing($file2);
+        Storage::disk('public')->assertExists($file1);
+        Storage::disk('public')->assertExists($file3);
+    }
+
+    /**
+     * UT-PCTRL-015: Validasi Bahasa Indonesia kustom
+     */
+    public function test_store_validation_uses_indonesian_error_messages(): void
+    {
+        $this->actingAs($this->admin);
+
+        $response = $this->post(route('admin.products.store'), [
+            'nama_produk' => '',
+            'kategori' => '',
+        ]);
+
+        $response->assertSessionHasErrors([
+            'nama_produk' => 'Nama produk wajib diisi.',
+            'kategori' => 'Kategori wajib diisi.',
+            'gambar' => 'Gambar produk wajib diupload minimal 1.',
+        ]);
+    }
 }

@@ -16,9 +16,12 @@
         <i class="fas fa-edit text-primary"></i> Form Edit Produk
     </div>
     <div class="p-6">
-        <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data" id="productForm" novalidate>
             @csrf
             @method('PUT')
+            
+            <input type="hidden" name="last_updated_at" value="{{ $product->tanggal_update ? $product->tanggal_update->timestamp : ($product->tanggal_dibuat ? $product->tanggal_dibuat->timestamp : '') }}">
+            <div id="deleteImagesContainer"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -84,10 +87,10 @@
                     @for($i = 1; $i <= 5; $i++)
                         @php $field = 'gambar' . $i; @endphp
                         @if($product->$field)
-                        <div class="relative w-28 h-28 group">
+                        <div class="relative w-28 h-28 group" id="existing-image-{{ $field }}">
                             <img src="{{ asset('storage/' . $product->$field) }}" alt="Gambar {{ $i }}" class="w-full h-full object-cover rounded-xl border-2 border-gray-200 transition-all duration-300 group-hover:border-primary group-hover:scale-105">
                             <button type="button" 
-                                    onclick="deleteImage('{{ $product->id }}', '{{ $field }}')" 
+                                    onclick="deleteImage('{{ $field }}')" 
                                     title="Hapus Gambar"
                                     class="absolute -top-2 -right-2 w-7 h-7 bg-red-500 text-white border-2 border-white rounded-full flex items-center justify-center text-xs shadow-lg transition-all duration-300 hover:scale-110 hover:bg-red-600">
                                 <i class="fas fa-times"></i>
@@ -101,7 +104,7 @@
 
             <div class="grid grid-cols-1 gap-4">
                 <div>
-                    <label class="block mb-2 font-medium text-dark text-sm">Tambah Gambar Baru (Maksimal {{ 5 - $existingImageCount }} lagi)</label>
+                    <label class="block mb-2 font-medium text-dark text-sm">Tambah Gambar Baru (Maksimal <span id="maxLabel1">{{ 5 - $existingImageCount }}</span> lagi)</label>
                     <div id="dropZone" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center transition-all duration-300 hover:border-primary hover:bg-primary/5 cursor-pointer">
                         <input type="file" name="gambar[]" id="gambarInput" 
                                class="hidden" 
@@ -112,7 +115,7 @@
                             </div>
                             <div>
                                 <p class="font-semibold text-dark">Klik atau drag & drop gambar di sini</p>
-                                <p class="text-gray-500 text-sm mt-1">Format: JPG, PNG, GIF, WebP (Maksimal {{ 5 - $existingImageCount }} gambar)</p>
+                                <p class="text-gray-500 text-sm mt-1">Format: JPG, PNG, GIF, WebP (Maksimal <span id="maxLabel2">{{ 5 - $existingImageCount }}</span> gambar)</p>
                             </div>
                         </div>
                     </div>
@@ -130,8 +133,8 @@
             </div>
 
             <div class="mt-10 pt-6 border-t-2 border-gray-100 flex gap-4">
-                <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <i class="fas fa-save"></i> Update Produk
+                <button type="submit" id="submitBtn" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <i class="fas fa-save" id="btnIcon"></i> <span id="btnText">Update Produk</span>
                 </button>
                 <a href="{{ route('admin.products.index') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-300">
                     <i class="fas fa-times"></i> Batal
@@ -149,8 +152,19 @@ const fileInput = document.getElementById('gambarInput');
 const previewContainer = document.getElementById('previewContainer');
 const fileCount = document.getElementById('fileCount');
 
-const maxNewImages = {{ 5 - $existingImageCount }};
+const initialExistingCount = {{ $existingImageCount }};
+let deletedExistingCount = 0;
 let selectedFiles = [];
+
+function getRemainingSlots() {
+    return (5 - (initialExistingCount - deletedExistingCount)) - selectedFiles.length;
+}
+
+function updateLimitLabel() {
+    const currentMax = 5 - (initialExistingCount - deletedExistingCount);
+    document.getElementById('maxLabel1').textContent = currentMax;
+    document.getElementById('maxLabel2').textContent = currentMax;
+}
 
 // Click to open file dialog
 dropZone.addEventListener('click', () => fileInput.click());
@@ -181,7 +195,7 @@ fileInput.addEventListener('change', (e) => {
 });
 
 function handleFiles(files) {
-    const remainingSlots = maxNewImages - selectedFiles.length;
+    const remainingSlots = getRemainingSlots();
     
     if (remainingSlots <= 0) {
         alert('Tidak dapat menambah gambar lagi! Hapus gambar yang ada terlebih dahulu.');
@@ -254,27 +268,43 @@ function updateFileCount() {
     }
 }
 
-function deleteImage(productId, imageField) {
+function deleteImage(imageField) {
     if (confirm('Hapus gambar ini?')) {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `/admin/products/${productId}/image/${imageField}`;
+        // Hide existing image visually
+        const imgDiv = document.getElementById(`existing-image-${imageField}`);
+        if (imgDiv) {
+            imgDiv.style.display = 'none';
+        }
         
-        const csrfInput = document.createElement('input');
-        csrfInput.type = 'hidden';
-        csrfInput.name = '_token';
-        csrfInput.value = '{{ csrf_token() }}';
+        // Append hidden input to deleteImagesContainer
+        const container = document.getElementById('deleteImagesContainer');
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'delete_images[]';
+        hiddenInput.value = imageField;
+        container.appendChild(hiddenInput);
         
-        const methodInput = document.createElement('input');
-        methodInput.type = 'hidden';
-        methodInput.name = '_method';
-        methodInput.value = 'DELETE';
+        // Track deleted count
+        deletedExistingCount++;
         
-        form.appendChild(csrfInput);
-        form.appendChild(methodInput);
-        document.body.appendChild(form);
-        form.submit();
+        // Update file input limit text
+        updateLimitLabel();
     }
 }
+
+// Prevent double submit
+document.getElementById('productForm').addEventListener('submit', function() {
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    btn.disabled = true;
+    btn.classList.add('opacity-75', 'cursor-not-allowed');
+    if (btnIcon) {
+        btnIcon.className = 'fas fa-spinner fa-spin';
+    }
+    if (btnText) {
+        btnText.textContent = 'Menyimpan...';
+    }
+});
 </script>
 @endpush

@@ -16,7 +16,7 @@
         <i class="fas fa-edit text-primary"></i> Form Tambah Produk
     </div>
     <div class="p-6">
-        <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data" id="productForm" novalidate>
             @csrf
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,8 +92,8 @@
             </div>
 
             <div class="mt-10 pt-6 border-t-2 border-gray-100 flex gap-4">
-                <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <i class="fas fa-save"></i> Simpan Produk
+                <button type="submit" id="submitBtn" class="inline-flex items-center gap-2 px-6 py-3 bg-islamic-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <i class="fas fa-save" id="btnIcon"></i> <span id="btnText">Simpan Produk</span>
                 </button>
                 <a href="{{ route('admin.products.index') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-300">
                     <i class="fas fa-times"></i> Batal
@@ -216,5 +216,20 @@ function updateFileCount() {
         fileCount.innerHTML = '';
     }
 }
+
+// Prevent double submit
+document.getElementById('productForm').addEventListener('submit', function() {
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    btn.disabled = true;
+    btn.classList.add('opacity-75', 'cursor-not-allowed');
+    if (btnIcon) {
+        btnIcon.className = 'fas fa-spinner fa-spin';
+    }
+    if (btnText) {
+        btnText.textContent = 'Menyimpan...';
+    }
+});
 </script>
 @endpush
