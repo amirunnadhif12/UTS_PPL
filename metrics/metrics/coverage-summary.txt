@@ -1,0 +1,84 @@
+
+   PASS  Tests\Unit\AuthControllerTest
+  ✓ login with valid credentials                                         0.54s  
+  ✓ login with invalid credentials                                       0.33s  
+  ✓ login rejects empty email                                            0.13s  
+  ✓ logout successfully                                                  0.14s  
+  ✓ show login redirects if authenticated                                0.13s  
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                    0.02s  
+
+   PASS  Tests\Unit\ProductControllerTest
+  ✓ index displays public products page                                  0.19s  
+  ✓ admin index displays products                                        0.14s  
+  ✓ create displays form                                                 0.14s  
+  ✓ store creates product with valid data                                0.17s  
+  ✓ store fails validation without nama produk                           0.14s  
+  ✓ show displays product detail                                         0.14s  
+  ✓ show returns 404 for nonexistent product                             0.14s  
+  ✓ edit displays form                                                   0.15s  
+  ✓ update product successfully                                          0.15s  
+  ✓ destroy deletes product                                              0.14s  
+  ✓ bulk destroy deletes multiple products                               0.14s  
+  ✓ delete image sets field to null                                      0.14s  
+  ✓ update fails with optimistic locking mismatch                        0.14s  
+  ✓ update stages and reorders images contiguously                       0.17s  
+  ✓ store validation uses indonesian error messages                      0.15s  
+
+   PASS  Tests\Unit\ProductModelTest
+  ✓ product can be instantiated                                          0.04s  
+  ✓ product has correct fillable attributes
+  ✓ product has timestamps disabled
+  ✓ product casts tanggal dibuat to datetime
+  ✓ product casts tanggal update to datetime
+
+   PASS  Tests\Unit\UserModelTest
+  ✓ user has correct fillable attributes                                 0.01s  
+  ✓ user has correct hidden attributes
+  ✓ user casts password to hashed
+  ✓ user casts email verified at to datetime
+
+   PASS  Tests\Feature\AuthIntegrationTest
+  ✓ login redirects to admin and creates session                         0.14s  
+  ✓ login invalid returns error and redirects back                       0.34s  
+  ✓ login rejects empty input                                            0.13s  
+  ✓ logout destroys session and redirects                                0.14s  
+  ✓ unauthenticated user is redirected to login                          0.13s  
+  ✓ authenticated user is redirected from login page                     0.16s  
+  ✓ full auth flow login access logout denied                            0.16s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                        0.15s  
+
+   PASS  Tests\Feature\ProductCrudIntegrationTest
+  ✓ create product saves to db and storage                               0.16s  
+  ✓ create product fails validation no data saved                        0.15s  
+  ✓ create duplicate product in same category fails                      0.15s  
+  ✓ public products page shows db data                                   0.15s  
+  ✓ product detail shows correct data                                    0.18s  
+  ✓ admin products requires auth and shows data                          0.19s  
+  ✓ update product changes data in db                                    0.19s  
+  ✓ update adds new image to empty slot                                  0.20s  
+  ✓ delete product removes from db and storage                           0.18s  
+  ✓ bulk delete removes multiple products                                0.20s  
+  ✓ delete specific image sets field to null                             0.19s  
+
+   PASS  Tests\Feature\PublicPageIntegrationTest
+  ✓ home page loads correctly                                            0.22s  
+  ✓ about page loads correctly                                           0.18s  
+  ✓ products page shows data from database                               0.19s  
+  ✓ article page receives slug parameter                                 0.18s  
+  ✓ static pages load correctly                                          0.19s  
+
+  Tests:    54 passed (180 assertions)
+  Duration: 8.03s
+
+  Http/Controllers/AuthController ............................. 15..18 / 85.7%  
+  Http/Controllers/Controller ......................................... 100.0%  
+  Http/Controllers/ProductController ........................ 253, 269 / 98.6%  
+  Models/Product ...................................................... 100.0%  
+  Models/User ......................................................... 100.0%  
+  Providers/AppServiceProvider ........................................ 100.0%  
+  ────────────────────────────────────────────────────────────────────────────  
+                                                                 Total: 97.0 %  
